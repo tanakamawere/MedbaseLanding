@@ -1,0 +1,33 @@
+# _config.yml
+
+# Site settings
+title: "Medbase"
+description: "Your ultimate MCQ platform for medical school study and review."
+baseurl: "" # Leave this blank if deploying at the root level
+url: "http://medbase.co.zw" # Update with your actual site URL
+
+# Author information
+author:
+  name: "Medbase Team"
+  email: "support@medbase.co.zw" # Replace with the correct support email
+
+# Social links (optional)
+social:
+  twitter: "https://twitter.com/medbase"
+  facebook: "https://facebook.com/medbase"
+  instagram: "https://instagram.com/medbase"
+  linkedin: "https://linkedin.com/company/medbase"
+
+# Custom variables
+product_info:
+  mission: "To make medical MCQ preparation easier and more accessible for students."
+  features:
+    - "Comprehensive MCQ library"
+    - "Progress tracking"
+    - "Real-time feedback on questions"
+    - "Cross-platform access on web and mobile"
+
+# Deployment settings
+# Uncomment and modify for GitHub Pages deployment
+# repository: "your_github_username/medbase-landing"
+# remote_theme: "minimal-mistakes/minimal-mistakes" # Optional example theme
