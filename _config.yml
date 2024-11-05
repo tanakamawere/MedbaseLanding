@@ -2,9 +2,10 @@
 
 # Site settings
 title: "Medbase"
-description: "Your ultimate MCQ platform for medical school study and review."
+description: "Your ultimate questions platform for medical school study and review."
 baseurl: "" # Leave this blank if deploying at the root level
 url: "http://medbase.co.zw" # Update with your actual site URL
+image: "https://i.postimg.cc/d3FdX3X7/Logo.png"
 
 # Author information
 author:
