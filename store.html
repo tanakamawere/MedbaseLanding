@@ -1,0 +1,39 @@
+---
+layout: default
+title: Store
+permalink: /store
+---
+
+<div class="store">
+    <h1>Our Products</h1>
+    <div class="products">
+        {% for product in site.data.products %}
+            <div class="product">
+                <a href="{{ product.url | relative_url }}">
+                    <h2>
+                        {{ product.name }}
+                    </h2>
+                </a>
+                <p>{{ product.description }}</p>
+                <p>Price: ${{ product.price }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .store {
+        text-align: center;
+    }
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .product {
+        border: 1px solid #ddd;
+        margin: 10px;
+        padding: 10px;
+        width: 200px;
+    }
+</style>
