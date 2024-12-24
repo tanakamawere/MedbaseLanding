@@ -22,7 +22,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "products"  # Used in routes, e.g., /admin/collections/products
     label: "Products"  # Used in the UI
-    folder: "_data/products"  # Folder where product files will be stored
+    folder: "_data"  # Folder where product files will be stored
     create: false  # Disable creation since products will be in a single YAML file
     slug: "{{name}}"  # Filename template, e.g., product-name.yml (No need for date-based slug)
     fields: # Fields for each product
