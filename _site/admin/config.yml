@@ -20,11 +20,11 @@ collections:
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "products" # Used in routes, e.g., /admin/collections/products
-    label: "Products" # Used in the UI
-    folder: "_data/products" # Folder where product files will be stored
-    create: true # Allow users to create new products
-    slug: "{{year}}-{{name}}" # Filename template, e.g., product-name.md
+  - name: "products"  # Used in routes, e.g., /admin/collections/products
+    label: "Products"  # Used in the UI
+    folder: "_data/products"  # Folder where product files will be stored
+    create: false  # Disable creation since products will be in a single YAML file
+    slug: "{{name}}"  # Filename template, e.g., product-name.yml (No need for date-based slug)
     fields: # Fields for each product
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["Books & Study Material", "Equipment", "Accessories", "Apparel", "First Aid & Medical Supplies"] }
@@ -33,7 +33,7 @@ collections:
       - { label: "Cover Image", name: "cover_image", widget: "image" } # Main product image
       - label: "Gallery"
         name: "gallery"
-        widget: "list" # Allows multiple images
+        widget: "list"  # Allows multiple images
         field:
           { label: "Image", name: "image", widget: "image" } # Each item in the list is an image
       - { label: "Stock Quantity", name: "stock", widget: "number", min: 0 }

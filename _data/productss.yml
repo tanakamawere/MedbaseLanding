@@ -1,0 +1,166 @@
+- name: "Medbase Cap"
+  category: "Scrubs & Clothing"
+  price: 5
+  description: "A stylish Medbase cap that helps you show your pride while keeping the sun out of your eyes. Made from high-quality materials for durability and comfort."
+  cover_image: "assets/img/products/medbase-cap-cover.jpg"
+  gallery:
+    - "assets/img/products/medbase-cap-1.jpg"
+    - "assets/img/products/medbase-cap-2.jpg"
+  stock: 120
+  featured: false
+  colors:
+    - "Black"
+    - "White"
+    - "Navy"
+
+- name: Medical Clipboard
+  category: Accessories
+  price: 2
+  description: A sturdy clipboard with a built-in storage compartment, perfect for
+    keeping patient notes and documents organized during rounds.
+  cover_image: https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg
+  gallery:
+    - https://m.media-amazon.com/images/I/711ToyrqLzL.jpg
+    - https://images-cdn.ubuy.co.in/635798392ecc3a5c3e5ba8f4-plastic-clipboards-set-of-6-multi-pack.jpg
+  stock: 20
+  featured: false
+
+- name: "Professional Lab Coat"
+  category: "Scrubs & Clothing"
+  price: 39.99
+  description: "A premium, durable lab coat designed for medical students and professionals. Made from high-quality fabric, this coat offers comfort and protection during long hours in the clinic or lab."
+  cover_image: "assets/img/products/professional-lab-coat-cover.jpg"
+  gallery:
+    - "assets/img/products/professional-lab-coat-1.jpg"
+    - "assets/img/products/professional-lab-coat-2.jpg"
+  stock: 60
+  featured: true
+  sizes:
+    - "Small"
+    - "Medium"
+    - "Large"
+    - "X-Large"
+    - "XX-Large"
+
+- name: Custom Name Tag
+  category: Personalization
+  price: 14.99
+  description: Personalized name tags for medical students and healthcare
+    professionals. Choose your name, title, and department.
+  cover_image: https://m.media-amazon.com/images/I/81Wav1OMY1L.jpg
+  gallery: []
+  stock: 50
+  featured: true
+
+- name: "LED Pen Torch"
+  category: "Accessories"
+  price: 9.99
+  description: "A durable and lightweight pen torch with a bright LED light, ideal for pupil examination and general use."
+  cover_image: "assets/img/products/pen-torch-cover.jpg"
+  gallery:
+    - "assets/img/products/pen-torch-1.jpg"
+    - "assets/img/products/pen-torch-2.jpg"
+  stock: 100
+  featured: false
+
+- name: "Medbase T-Shirt (Long Sleeve)"
+  category: "Scrubs & Clothing"
+  price: 10.00
+  description: "A stylish Medbase long-sleeve T-shirt made from soft, high-quality cotton. Ideal for layering or cooler weather, and great for medical students who want to show their school pride."
+  cover_image: "assets/img/products/medbase-tshirt-long-sleeve-cover.jpg"
+  gallery:
+    - "assets/img/products/medbase-tshirt-long-sleeve-1.jpg"
+    - "assets/img/products/medbase-tshirt-long-sleeve-2.jpg"
+  stock: 80
+  featured: true
+  sizes:
+    - "Small"
+    - "Medium"
+    - "Large"
+    - "X-Large"
+    - "XX-Large"
+  colors:
+    - "Black"
+    - "White"
+    - "Navy"
+    - "Gray"
+
+- name: "Medbase T-Shirt (Short Sleeve)"
+  category: "Scrubs & Clothing"
+  price: 10.00
+  description: "A comfortable, breathable Medbase short-sleeve T-shirt made from high-quality cotton. Perfect for casual wear or medical student events. Available in various sizes and colors."
+  cover_image: "assets/img/products/medbase-tshirt-short-sleeve-cover.jpg"
+  gallery:
+    - "assets/img/products/medbase-tshirt-short-sleeve-1.jpg"
+    - "assets/img/products/medbase-tshirt-short-sleeve-2.jpg"
+  stock: 100
+  featured: true
+  sizes:
+    - "Small"
+    - "Medium"
+    - "Large"
+    - "X-Large"
+    - "XX-Large"
+  colors:
+    - "Black"
+    - "White"
+    - "Navy"
+    - "Gray"
+
+- name: "Stethoscope Holder"
+  category: "Accessories"
+  price: 5.00
+  description: "A practical and sturdy stethoscope holder that attaches easily to your lab coat or belt, ensuring your stethoscope is always within reach."
+  cover_image: "assets/img/products/stethoscope-holder-cover.jpg"
+  gallery:
+    - "assets/img/products/stethoscope-holder-1.jpg"
+    - "assets/img/products/stethoscope-holder-2.jpg"
+  stock: 75
+  featured: false
+
+- name: "Stethoscope Bag"
+  category: "Accessories"
+  price: 10.00
+  description: "A high-quality stethoscope bag designed to securely store and carry your stethoscope and other medical tools. Available with optional custom embroidery for an additional $5."
+  cover_image: "assets/img/products/stethoscope-bag-cover.jpg"
+  gallery:
+    - "assets/img/products/stethoscope-bag-1.jpg"
+    - "assets/img/products/stethoscope-bag-2.jpg"
+  stock: 30
+  featured: true
+  customization: 
+    price: 5.00 # Additional charge for customization
+    description: "Add custom embroidery with your name or department for an additional $5."
+
+- name: "Professional Stethoscope"
+  category: "Equipment"
+  price: 49.99
+  description: "A high-quality stethoscope designed for medical students and professionals, providing excellent acoustics for auscultation."
+  cover_image: "assets/img/products/stethoscope-cover.jpg"
+  gallery:
+    - "assets/img/products/stethoscope-1.jpg"
+    - "assets/img/products/stethoscope-2.jpg"
+  stock: 30
+  featured: true
+
+- name: "Medical Tape Measure"
+  category: "Equipment"
+  price: 14.99
+  description: "A durable and flexible medical tape measure, perfect for measuring body circumference and wound size. Made with high-quality materials for accurate measurements."
+  cover_image: "assets/img/products/medical-tape-measure-cover.jpg"
+  gallery:
+    - "assets/img/products/medical-tape-measure-1.jpg"
+    - "assets/img/products/medical-tape-measure-2.jpg"
+  stock: 50
+  featured: true
+
+- name: "Tendon Hammer"
+  category: "Equipment"
+  price: 5
+  description: "A high-quality tendon hammer used for reflex tests and neurological examinations. Features a comfortable grip and durable construction, ensuring accuracy and reliability."
+  cover_image: "assets/img/products/tendon-hammer-cover.jpg"
+  gallery:
+    - "assets/img/products/tendon-hammer-1.jpg"
+    - "assets/img/products/tendon-hammer-2.jpg"
+  stock: 40
+  featured: false
