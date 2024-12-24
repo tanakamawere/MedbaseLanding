@@ -1,3 +1,4 @@
+---
 name: "Professional Stethoscope"
 category: "Equipment"
 price: 49.99
@@ -8,3 +9,4 @@ gallery:
   - "assets/img/products/stethoscope-2.jpg"
 stock: 30
 featured: true
+---
