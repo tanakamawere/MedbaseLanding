@@ -1,3 +1,4 @@
+---
 name: "LED Pen Torch"
 category: "Accessories"
 price: 9.99
@@ -8,3 +9,4 @@ gallery:
   - "assets/img/products/pen-torch-2.jpg"
 stock: 100
 featured: false
+---
