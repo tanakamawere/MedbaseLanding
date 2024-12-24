@@ -24,10 +24,10 @@ collections:
     label: "Products" # Used in the UI
     folder: "_data/products" # Folder where product files will be stored
     create: true # Allow users to create new products
-    slug: "{{slug}}" # Filename template, e.g., product-name.md
+    slug: "{{year}}-{{name}}" # Filename template, e.g., product-name.md
     fields: # Fields for each product
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Books", "Clothing", "Accessories", "Electronics"] }
+      - { label: "Category", name: "category", widget: "select", options: ["Books & Study Material", "Equipment", "Accessories", "Apparel", "First Aid & Medical Supplies"] }
       - { label: "Price", name: "price", widget: "number", value_type: "float", min: 0 }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Cover Image", name: "cover_image", widget: "image" } # Main product image
