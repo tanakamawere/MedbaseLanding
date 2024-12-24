@@ -1,3 +1,4 @@
+---
 name: "Custom Name Tag"
 category: "Personalization"
 price: 14.99
@@ -8,3 +9,4 @@ gallery:
   - "assets/img/products/name-tag-2.jpg"
 stock: 50
 featured: true
+---
