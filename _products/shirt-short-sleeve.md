@@ -1,4 +1,6 @@
 ---
+id: 7
+layout: default
 name: "Medbase T-Shirt (Short Sleeve)"
 category: "Scrubs & Clothing"
 price: 10.00
@@ -21,3 +23,4 @@ colors:
   - "Navy"
   - "Gray"
 ---
+{% include product-page.html %}

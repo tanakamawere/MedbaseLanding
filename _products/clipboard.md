@@ -1,4 +1,6 @@
 ---
+id: 2
+layout: default
 name: Medical Clipboard
 category: Accessories
 price: 2
@@ -11,3 +13,5 @@ gallery:
 stock: 20
 featured: false
 ---
+
+{% include product-page.html %}

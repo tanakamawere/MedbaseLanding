@@ -1,0 +1,45 @@
+---
+layout: default
+title: Blog
+permalink: /blog
+pagination: 
+    enabled: true
+---
+
+<section id="hero" class="hero section">
+    <div class="px-5 container">
+        <div class="container-fluid py-5" data-aos="fade-up">
+            <h1 class="display-6 fw-bold">Medbase Blog</h2>
+            <p class="col-md-8 fs-6">
+                Welcome to the Medbase blog! Here you will find a collection of articles, guides, and resources to help you
+                navigate the world of medicine and healthcare. Whether you are a student, a professional, or just someone
+                interested in learning more about health, we have something for you. Enjoy!
+            </p>
+        </div>
+    
+    
+        <div class="row gx-5" data-aos="fade-up" data-aos-delay="100">
+            {% assign sorted = paginator.posts | sort: 'date' | reverse  %}
+            {% for post in sorted %}
+                {% include posts-control.html %}
+            {% endfor %}
+        </div>
+    
+        <nav  data-aos="fade-up" data-aos-delay="200">
+            {% if paginator.total_pages > 1 %}
+            <ul class="pagination">
+                {% if paginator.previous_page %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+                </li>
+                {% endif %}
+                {% if paginator.next_page %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+                </li>
+                {% endif %}
+            </ul>
+            {% endif %}
+        </nav>
+    </div>
+</section>

@@ -1,4 +1,6 @@
 ---
+id: 4
+layout: default
 name: Custom Name Tag
 category: Personalization
 price: 14.99
@@ -9,3 +11,4 @@ gallery: []
 stock: 50
 featured: true
 ---
+{% include product-page.html %}

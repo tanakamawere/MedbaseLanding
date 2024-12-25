@@ -1,4 +1,6 @@
 ---
+id: 10
+layout: default
 name: "Professional Stethoscope"
 category: "Equipment"
 price: 49.99
@@ -10,3 +12,4 @@ gallery:
 stock: 30
 featured: true
 ---
+{% include product-page.html %}

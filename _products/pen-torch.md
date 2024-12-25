@@ -1,4 +1,6 @@
 ---
+id: 5
+layout: default
 name: "LED Pen Torch"
 category: "Accessories"
 price: 9.99
@@ -10,3 +12,4 @@ gallery:
 stock: 100
 featured: false
 ---
+{% include product-page.html %}

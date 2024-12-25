@@ -1,4 +1,6 @@
 ---
+id: 9
+layout: default
 name: "Stethoscope Bag"
 category: "Accessories"
 price: 10.00
@@ -13,3 +15,4 @@ customization:
   price: 5.00 # Additional charge for customization
   description: "Add custom embroidery with your name or department for an additional $5."
 ---
+{% include product-page.html %}

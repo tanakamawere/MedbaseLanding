@@ -1,4 +1,6 @@
 ---
+id: 8
+layout: default
 name: "Stethoscope Holder"
 category: "Accessories"
 price: 5.00
@@ -10,3 +12,4 @@ gallery:
 stock: 75
 featured: false
 ---
+{% include product-page.html %}

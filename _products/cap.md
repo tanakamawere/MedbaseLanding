@@ -1,4 +1,6 @@
 ---
+layout: default
+id: 1
 name: "Medbase Cap"
 category: "Scrubs & Clothing"
 price: 5
@@ -14,3 +16,6 @@ colors:
   - "White"
   - "Navy"
 ---
+
+{% include product-page.html %}
+```

@@ -1,4 +1,6 @@
 ---
+id: 11
+layout: default
 name: "Medical Tape Measure"
 category: "Equipment"
 price: 14.99
@@ -10,3 +12,4 @@ gallery:
 stock: 50
 featured: true
 ---
+{% include product-page.html %}

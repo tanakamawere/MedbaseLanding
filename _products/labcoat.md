@@ -1,4 +1,6 @@
 ---
+id: 3
+layout: default
 name: "Professional Lab Coat"
 category: "Scrubs & Clothing"
 price: 39.99
@@ -16,3 +18,4 @@ sizes:
   - "X-Large"
   - "XX-Large"
 ---
+{% include product-page.html %}

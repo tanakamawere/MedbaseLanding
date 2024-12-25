@@ -1,4 +1,6 @@
 ---
+id: 12
+layout: default
 name: "Tendon Hammer"
 category: "Equipment"
 price: 5
@@ -10,3 +12,4 @@ gallery:
 stock: 40
 featured: false
 ---
+{% include product-page.html %}

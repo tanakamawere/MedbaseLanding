@@ -1,4 +1,6 @@
 ---
+id: 6
+layout: default
 name: "Medbase T-Shirt (Long Sleeve)"
 category: "Scrubs & Clothing"
 price: 10.00
@@ -21,3 +23,4 @@ colors:
   - "Navy"
   - "Gray"
 ---
+{% include product-page.html %}
