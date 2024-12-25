@@ -32,3 +32,6 @@ product_info:
 # Uncomment and modify for GitHub Pages deployment
 # repository: "your_github_username/medbase-landing"
 # remote_theme: "minimal-mistakes/minimal-mistakes" # Optional example theme
+collections:
+  products:
+    output: true
