@@ -1,4 +1,8 @@
 ---
+title: "{{ page.name }} - Medbase Store"
+description: "{{ page.description }}"
+keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
+image: "{{ page.cover_image }}"
 id: 3
 layout: default
 name: "Professional Lab Coat"
