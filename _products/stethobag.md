@@ -1,8 +1,6 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "Stethoscope Bag"
+keywords: "Medbase, medical products, healthcare, stethoscope bag, accessories"
 id: 9
 layout: default
 name: "Stethoscope Bag"

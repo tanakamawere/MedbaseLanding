@@ -1,8 +1,6 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "Name Tags"
+keywords: "Medbase, medical products, healthcare, name tags, personalization"
 id: 4
 layout: default
 name: Custom Name Tag

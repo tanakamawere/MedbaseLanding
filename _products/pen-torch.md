@@ -1,13 +1,11 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "LED Pen Torch"
+keywords: "Medbase, medical products, LED pen torch, accessories, examination"
 id: 5
 layout: default
 name: "LED Pen Torch"
 category: "Accessories"
-price: 9.99
+price: 5.00
 description: "A durable and lightweight pen torch with a bright LED light, ideal for pupil examination and general use."
 cover_image: "assets/img/products/pen-torch-cover.jpg"
 gallery:

@@ -1,8 +1,6 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "Stethoscope Holder"
+keywords: "Medbase, medical products, healthcare, stethoscope holder, accessories"
 id: 8
 layout: default
 name: "Stethoscope Holder"

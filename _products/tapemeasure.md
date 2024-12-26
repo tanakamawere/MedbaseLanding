@@ -1,8 +1,6 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "Medical Tape Measure"
+keywords: "Medbase, medical products, healthcare, tape measure, equipment, measurement"
 id: 11
 layout: default
 name: "Medical Tape Measure"

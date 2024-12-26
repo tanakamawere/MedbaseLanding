@@ -1,8 +1,6 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "Tendon Hammer"
+keywords: "Medbase, medical products, healthcare, tendon hammer, equipment, reflex test, neurological examination"
 id: 12
 layout: default
 name: "Tendon Hammer"

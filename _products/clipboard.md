@@ -1,15 +1,12 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "Clipboard"
+keywords: "Medbase, medical products, clipboard, accessories, storage"
 id: 2
 layout: default
 name: Medical Clipboard
 category: Accessories
 price: 2
-description: A sturdy clipboard with a built-in storage compartment, perfect for
-  keeping patient notes and documents organized during rounds.
+description: "A sturdy clipboard with a built-in storage compartment,perfect for keeping patient notes and documents organized during rounds."
 cover_image: https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg
 gallery:
   - https://m.media-amazon.com/images/I/711ToyrqLzL.jpg

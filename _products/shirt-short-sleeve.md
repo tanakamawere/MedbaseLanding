@@ -1,8 +1,6 @@
 ---
-title: "{{ page.name }} - Medbase Store"
-description: "{{ page.description }}"
-keywords: "{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}"
-image: "{{ page.cover_image }}"
+title: "Medbase T-Shirt (Short Sleeve)"
+keywords: "Medbase, medical products, healthcare, t-shirt, short sleeve, apparel"
 id: 7
 layout: default
 name: "Medbase T-Shirt (Short Sleeve)"
