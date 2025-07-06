@@ -7,10 +7,10 @@ name: "Stethoscope Bag"
 category: "Accessories"
 price: 10.00
 description: "A high-quality stethoscope bag designed to securely store and carry your stethoscope and other medical tools. Available with optional custom embroidery for an additional $5."
-cover_image: "assets/img/products/stethoscope-bag-cover.jpg"
+cover_image: "https://www.medisave.eu/cdn/shop/products/cm_pur.jpg?v=1687797978&width=1946"
 gallery:
-  - "assets/img/products/stethoscope-bag-1.jpg"
-  - "assets/img/products/stethoscope-bag-2.jpg"
+  - "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROPx9UYNeXUlw4RhU3zrGFZayieKIcpXSgQ&s"
+  - "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_3VCw0vzU3hAc9flVtqDlyoGhBkbTb6HJJ7-Fxrr3UDyhVvZugUTzGcw61jnibLPTZLo&usqp=CAU"
 stock: 30
 featured: true
 customization: 

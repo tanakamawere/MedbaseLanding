@@ -7,10 +7,10 @@ name: "Medical Tape Measure"
 category: "Equipment"
 price: 14.99
 description: "A durable and flexible medical tape measure, perfect for measuring body circumference and wound size. Made with high-quality materials for accurate measurements."
-cover_image: "assets/img/products/medical-tape-measure-cover.jpg"
+cover_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTAilXVHMGIlwYV7Izt9PxuMJBrnNoUxU31A&s"
 gallery:
-  - "assets/img/products/medical-tape-measure-1.jpg"
-  - "assets/img/products/medical-tape-measure-2.jpg"
+  - "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUVyij6kBtZU_ZI0z6E9RvTLAWHQewlTvFLiOfxh1gtZmi9k6Dx5zXkpQk-hzokuKHQI&usqp=CAU"
+  - "https://m.media-amazon.com/images/I/61Y2XOXDAgS.jpg"
 stock: 50
 featured: true
 ---

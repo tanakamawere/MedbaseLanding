@@ -2,6 +2,7 @@
 <html lang="en-US">
   <head><meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <link rel="canonical" href="http://localhost:4000/" />
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--Meta tags-->
@@ -9,6 +10,7 @@
 <meta name="title" content="Medbase - Ultimate Questions Platform - Medbase" />
 <meta name="description" content="Medbase is the ultimate platform for medical questions and answers. Find reliable information and resources for all your healthcare needs." />
 <meta name="keywords" content="Medbase, medical MCQs, medical education, study platform, exam preparation, medical students, question bank, customizable questions, medical learning, online learning, medical quizzes">
+<meta name="author" content="Medbase Team">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -16,6 +18,9 @@
 <meta property="og:title" content="Medbase - Ultimate Questions Platform - Medbase" />
 <meta property="og:description" content="Medbase is the ultimate platform for medical questions and answers. Find reliable information and resources for all your healthcare needs." />
 <meta property="og:image" content="https://i.postimg.cc/d3FdX3X7/Logo.png" />
+<meta property="og:image:alt" content="Medbase - Ultimate Questions Platform - Medbase" />
+<meta property="og:site_name" content="Medbase" />
+
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -23,6 +28,15 @@
 <meta property="twitter:title" content="Medbase - Ultimate Questions Platform - Medbase" />
 <meta property="twitter:description" content="Medbase is the ultimate platform for medical questions and answers. Find reliable information and resources for all your healthcare needs." />
 <meta property="twitter:image" content="https://i.postimg.cc/d3FdX3X7/Logo.png" />
+<meta name="twitter:label1" value="Price" />
+<meta name="twitter:data1" value="$" />
+<meta name="twitter:label2" value="Category" />
+<meta name="twitter:data2" value="" />
+
+<!-- WhatsApp Preview -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
 
 <!--Browser Toolbar Colour-->
 
@@ -94,7 +108,6 @@
         <ul>
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
-          <li><a href="/blog" class="nav-link">Blog</a></li>
           <li><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -118,49 +131,105 @@
     });
   </script>
     <main>
-          <!-- Hero Section -->
+          <!-- Pre-order Banner -->
+    <div class="pre-order-banner" id="preOrderBanner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center">
+                        <div class="banner-icon me-3">
+                            <i class="bi bi-tags-fill"></i>
+                        </div>
+                        <div>
+                            <h4 class="mb-0">Limited Time Pre-Orders: Medical Equipment Bundles Now Available!</h4>
+                            <p class="mb-0 d-none d-md-block">Save up to 15% on essential medical equipment bundles</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="d-flex justify-content-lg-end align-items-center">
+                        <div class="countdown-wrapper me-3 d-none d-md-block">
+                            <div id="countdown-timer" class="d-flex">
+                                <div class="countdown-item">
+                                    <span id="days">00</span>
+                                    <span class="countdown-label">d</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="hours">00</span>
+                                    <span class="countdown-label">h</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="minutes">00</span>
+                                    <span class="countdown-label">m</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span id="seconds">00</span>
+                                    <span class="countdown-label">s</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="/store" class="btn btn-sm btn-light">Shop Now</a>
+                        <button type="button" class="btn-close btn-close-white ms-3" aria-label="Close" onclick="closePreOrderBanner()"></button>
+                    </div>
+                </div>
+            </div>
+        </div>    </div>
+
+    <!-- Hero Section with Store Focus -->
 <section id="hero" class="hero section">
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-    <div class="row align-items-center">
-      <div class="col-lg-6">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
         <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
           <div class="company-badge mb-4">
-            <i class="bi bi-gear-fill me-2"></i>
-            Built for Your Academic Success
+            <i class="bi bi-stars me-2"></i>
+            Complete Medical Student Experience
           </div>
 
           <h1 class="mb-4">
             Medbase <br>
-            <span class="accent-text">Ultimate Question Platform</span>
+            <span class="accent-text">Learn Better. Equip Smarter.</span>
           </h1>
 
-          <p class="mb-4 mb-md-5">
-            Medbase offers a comprehensive MCQ & Structured library designed specifically for medical students, with detailed explanations and progress tracking to help you master every topic.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="https://app.medbase.co.zw" class="btn btn-primary me-0 me-sm-2 mx-1">Get Started</a>
+          <p class="mb-4 mb-md-5 lead mx-auto" style="max-width: 800px;">
+            Your all-in-one medical student resource: from high-quality clinical equipment in our store to comprehensive study materials in our app. Prepare for both your exams and clinical rotations with Medbase.
+          </p>          <div class="hero-buttons d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mb-3">
+            <a href="/store" class="btn btn-store btn-lg d-flex align-items-center px-4 py-2" style="font-size:1.2rem;">
+              <i class="bi bi-bag-check-fill me-2"></i> Visit Our Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.tanakamawere.medbasehybrid" target="_blank" rel="noopener" class="btn btn-success btn-lg d-flex align-items-center px-4 py-2" style="font-size:1.2rem;">
+              <img src="assets/img/google_play_badge.png" alt="Get it on Google Play" style="height:40px; margin-right:12px;"> Download App
+            </a>
           </div>
+          
+          <div class="web-app-link mb-4 text-center" data-aos="fade-up" data-aos-delay="250">
+            <a href="https://app.medbase.co.zw" target="_blank" rel="noopener" class="btn btn-web-app d-inline-flex align-items-center">
+              <i class="bi bi-laptop me-2"></i> Access Web Version
+              <span class="ms-2 badge bg-light text-primary">No Download Required</span>
+            </a>
+            <p class="small text-muted mt-2">Use Medbase on any device with a web browser — desktop, laptop, or tablet</p>
+          </div>
+
+          <div class="hero-feature mt-4 mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-delay="300">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="hero-feature-icon me-3">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div>
+                <p class="mb-0"><strong>Limited Time Offer:</strong> Pre-order our medical equipment bundles by July 31st and save up to 15%!</p>
+              </div>
+            </div>          </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-lg-6">
-        <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-          <img src="assets/img/illustration-1.webp" alt="Hero Image" class="img-fluid">
-
-          <div class="customers-badge">
-            <div class="customer-avatars">
-              <img src="assets/img/avatar-1.webp" alt="Customer 1" class="avatar">
-              <img src="assets/img/avatar-2.webp" alt="Customer 2" class="avatar">
-              <img src="assets/img/avatar-3.webp" alt="Customer 3" class="avatar">
-              <img src="assets/img/avatar-4.webp" alt="Customer 4" class="avatar">
-              <img src="assets/img/avatar-5.webp" alt="Customer 5" class="avatar">
-              <span class="avatar more">12+</span>
-            </div>
-            <p class="mb-0 mt-2">3k+ medical students are enhancing their learning with Medbase</p>
-          </div>
+    <!-- Trust Badge Section -->
+    <div class="row justify-content-center mt-5" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-8 text-center">
+        <div class="trust-badge mx-auto">
+          <p class="mb-0"><span class="badge bg-primary-light"><i class="bi bi-shield-check me-1"></i> Trusted by</span> <span class="fw-bold">3,000+</span> medical students across Zimbabwe</p>
         </div>
       </div>
     </div>
@@ -173,18 +242,18 @@
           </div>
           <div class="stat-content">
             <h4>1x Best in EdTech</h4>
-            <p class="mb-0">Recognized for excellence in medical education tools</p>
+            <p class="mb-0">Recognized for excellence in medical education</p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="stat-item">
           <div class="stat-icon">
-            <i class="bi bi-briefcase"></i>
+            <i class="bi bi-box-seam"></i>
           </div>
           <div class="stat-content">
-            <h4>100 Topics Covered</h4>
-            <p class="mb-0">Spanning all core medical subjects</p>
+            <h4>3 Equipment Bundles</h4>
+            <p class="mb-0">Curated for different clinical needs</p>
           </div>
         </div>
       </div>
@@ -195,18 +264,18 @@
           </div>
           <div class="stat-content">
             <h4>2k MCQs Available</h4>
-            <p class="mb-0">Detailed questions with explanations</p>
+            <p class="mb-0">Comprehensive learning materials</p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="stat-item">
           <div class="stat-icon">
-            <i class="bi bi-award"></i>
+            <i class="bi bi-stars"></i>
           </div>
           <div class="stat-content">
-            <h4>6x Student Choice</h4>
-            <p class="mb-0">Top-rated by med students locally</p>
+            <h4>Premium Quality</h4>
+            <p class="mb-0">Top-rated medical equipment</p>
           </div>
         </div>
       </div>
@@ -324,7 +393,7 @@
 
       <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="phone-mockup text-center">
-          <img src="assets/img/phone-app-screen.webp" alt="Phone Mockup" class="img-fluid">
+          <img src="https://i.postimg.cc/02tNvRrn/medbase-landing-page.png" alt="Phone Mockup" class="img-fluid">
         </div>
       </div><!-- End Phone Mockup -->
 
@@ -379,10 +448,13 @@
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div class="row justify-content-center align-items-center position-relative">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 class="display-4 mb-4">Empowering Medical Students with Precision Learning</h2>
-        <p class="mb-4">Medbase provides structured and comprehensive MCQs designed to build your medical knowledge effectively and efficiently. Dive into clinically relevant questions, explanations, and critical insights to succeed in your exams and beyond.</p>
-        <a href="#" class="btn btn-cta">Start Learning Today</a>
+      <div class="col-lg-8 mx-auto text-center">        <h2 class="display-4 mb-4">The Complete Medical Student Package</h2>
+        <p class="mb-4">Get everything you need to succeed: quality medical equipment from our store and comprehensive study resources in our app. Prepare for clinical rotations with our curated equipment bundles while mastering your theory with 2,000+ practice questions.</p>
+        <div class="cta-buttons d-flex flex-column flex-md-row justify-content-center gap-3">
+          <a href="/store" class="btn btn-cta">Visit Our Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.tanakamawere.medbasehybrid" target="_blank" rel="noopener" class="btn btn-outline-cta">Download Our App</a>
+          <a href="https://app.medbase.co.zw" target="_blank" rel="noopener" class="btn btn-outline-cta btn-web">Use Web Version</a>
+        </div>
       </div>
 
       <!-- Abstract Background Elements -->
@@ -425,82 +497,267 @@
     </div>
   </div>
 
-</section><!-- /Call To Action Section -->
+</section>
+
+<style>
+    /* Pre-order Banner Styles */
+    .pre-order-banner {
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+        color: white;
+        padding: 15px 0;
+        position: relative;
+        z-index: 1000;
+    }
     
-    <!-- Faq Section -->
-<section class="faq-9 faq section light-background" id="faq">
+    .banner-icon {
+        font-size: 2rem;
+        color: #ffcc00;
+        margin-right: 15px;
+    }
+    
+    .pre-order-banner h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+    }
+    
+    .pre-order-banner p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+    
+    .countdown-wrapper {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    
+    .countdown-item {
+        margin: 0 3px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+    
+    .countdown-item span {
+        font-weight: bold;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+        margin-left: 2px;
+    }
+    
+    .btn-outline-cta {
+        background-color: transparent;
+        border: 2px solid #4e73df;
+        color: #4e73df;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-outline-cta:hover {
+        background-color: #4e73df;
+        color: white;
+        transform: translateY(-3px);
+    }
+    
+    /* Enhanced Call to Action styles */
+    .cta-buttons {
+        margin-top: 2rem;
+    }
+    
+    .btn-cta {
+        background-color: #4e73df;
+        color: white;
+        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-cta:hover {
+        background-color: #3a5ecc;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Additional Hero Section Styles */
+    .btn-store {
+        background-color: #ff6b6b;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-store:hover {
+        background-color: #ff5252;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero-feature {
+        background-color: rgba(78, 115, 223, 0.1);
+        border-left: 4px solid #4e73df;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    .hero-feature:hover {
+        background-color: rgba(78, 115, 223, 0.15);
+        transform: translateY(-3px);
+    }
+    
+    .hero-feature-icon {
+        font-size: 1.5rem;
+        color: #4e73df;
+    }
+      .accent-text {
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    /* Updated Hero Section Styles */
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .hero h1 {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+    
+    .company-badge {
+        display: inline-block;
+        background-color: rgba(78, 115, 223, 0.1);
+        color: #4e73df;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    
+    .trust-badge {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 12px 24px;
+        border-radius: 50px;
+        margin-top: 2rem;
+    }
+    
+    .bg-primary-light {
+        background-color: rgba(78, 115, 223, 0.1);
+        color: #4e73df;
+    }
+    
+    .hero-feature {
+        background-color: rgba(78, 115, 223, 0.1);
+        border-radius: 8px;
+        padding: 15px 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Web App Button Styles */
+    .btn-web-app {
+        background-color: rgba(78, 115, 223, 0.1);
+        color: #4e73df;
+        border: 1px solid #4e73df;
+        border-radius: 50px;
+        padding: 8px 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-web-app:hover {
+        background-color: rgba(78, 115, 223, 0.2);
+        transform: translateY(-2px);
+    }
+    
+    .web-app-link {
+        border-top: 1px dashed #e0e0e0;
+        border-bottom: 1px dashed #e0e0e0;
+        padding: 15px 0;
+    }
+    
+    .btn-web {
+        background-color: white;
+        border: 1px solid #4e73df;
+        color: #4e73df;
+    }
+    
+    .btn-web:hover {
+        background-color: rgba(78, 115, 223, 0.1);
+        color: #224abe;
+    }
+    
+    @media (max-width: 767px) {
+        .cta-buttons {
+            gap: 10px !important;
+        }
+        
+        .cta-buttons a {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
 
-  <div class="container">
-      <div class="row">
-
-          <div class="col-lg-5" data-aos="fade-up">
-              <h2 class="faq-title">Have a question? Check out the FAQ</h2>
-              <p class="faq-description">Get all the information you need about Medbase and how it can enhance your medical education.</p>
-              <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
-                  <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="currentColor"></path>
-                  </svg>
-              </div>
-          </div>
-
-          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="300">
-              <div class="faq-container">
-
-                  <div class="faq-item faq-active">
-                      <h3>What is Medbase?</h3>
-                      <div class="faq-content">
-                          <p>Medbase is a comprehensive platform designed to assist medical students in mastering MCQs and enhancing their exam preparation. It offers a range of question types to simulate real exam conditions.</p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                  </div><!-- End Faq item-->
-
-                  <div class="faq-item">
-                      <h3>How does Medbase support my learning?</h3>
-                      <div class="faq-content">
-                          <p>Medbase provides a structured approach to learning with dynamic questions, explanations for each answer, and analytics to track your progress and identify areas for improvement.</p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                  </div><!-- End Faq item-->
-
-                  <div class="faq-item">
-                      <h3>Can I create my own questions?</h3>
-                      <div class="faq-content">
-                          <p>Yes! Medbase allows you to create custom questions and categorize them based on your study needs, making it easier to tailor your learning experience.</p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                  </div><!-- End Faq item-->
-
-                  <div class="faq-item">
-                      <h3>Is Medbase suitable for all medical students?</h3>
-                      <div class="faq-content">
-                          <p>Absolutely! Whether you are in your first year or preparing for board exams, Medbase is designed to meet the needs of medical students at all levels.</p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                  </div><!-- End Faq item-->
-
-                  <div class="faq-item">
-                      <h3>What types of questions can I find on Medbase?</h3>
-                      <div class="faq-content">
-                          <p>Medbase includes various question types such as Single Best Answer, True/False, Table Matching, and Essay questions to help you prepare comprehensively.</p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                  </div><!-- End Faq item-->
-
-                  <div class="faq-item">
-                      <h3>How can I track my progress?</h3>
-                      <div class="faq-content">
-                          <p>You can monitor your performance through detailed analytics and reports that show your strengths and weaknesses, enabling you to focus on areas that need improvement.</p>
-                      </div>
-                      <i class="faq-toggle bi bi-chevron-right"></i>
-                  </div><!-- End Faq item-->
-
-              </div>
-          </div>
-
-      </div>
-  </div>
-</section><!-- /Faq Section -->
-
+<script>
+    // Set the date we're counting down to (July 31, 2025)
+    const countDownDate = new Date("July 31, 2025 23:59:59").getTime();
+    
+    // Update the countdown every 1 second
+    const countdownTimer = setInterval(function() {
+        // Get today's date and time
+        const now = new Date().getTime();
+        
+        // Find the distance between now and the countdown date
+        const distance = countDownDate - now;
+        
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Display the result
+        document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+        
+        // If the countdown is finished, display a message
+        if (distance < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById("countdown-timer").innerHTML = "OFFER EXPIRED";
+        }
+    }, 1000);
+    
+    // Function to close the pre-order banner
+    function closePreOrderBanner() {
+        document.getElementById("preOrderBanner").style.display = "none";
+        
+        // Set a cookie to remember that the user closed the banner
+        const date = new Date();
+        date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // 1 day
+        document.cookie = "preOrderBannerClosed=true; expires=" + date.toUTCString() + "; path=/";
+    }
+    
+    // Check if the banner was previously closed
+    window.onload = function() {
+        if (document.cookie.indexOf("preOrderBannerClosed=true") > -1) {
+            document.getElementById("preOrderBanner").style.display = "none";
+        }
+    }
+</script>
     </main>
 
     <footer id="footer" class="footer">

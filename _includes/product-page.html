@@ -2,14 +2,200 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ page.cover_image }}" class="img-fluid" alt="{{ page.name }}">
+                <img src="{{ page.cover_image }}" class="img-fluid rounded-3 shadow-sm" alt="{{ page.name }}">
+                {% if page.gallery %}
+                <div class="product-gallery mt-3">
+                    <div class="row g-2">
+                        {% for image in page.gallery %}
+                        <div class="col-4">
+                            <a href="{{ image }}" class="glightbox" data-gallery="product-gallery">
+                                <img src="{{ image }}" class="img-fluid rounded-3" alt="{{ page.name }} - Gallery Image">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
             </div>
             <div class="col-md-6">
-                <h1>{{ page.name }}</h1>
-                <h4>Price: ${{ page.price }}</h4>
-                <p>{{ page.description }}</p>
-                <a href="{{ page.buy_url }}" class="btn btn-primary">Buy</a>
+                <span class="badge bg-primary mb-2">{{ page.category }}</span>
+                <h1 class="mb-3">{{ page.name }}</h1>
+                
+                <div class="product-price mb-4">
+                    <span class="price-tag">${{ page.price }}</span>
+                    {% if page.stock > 0 %}
+                    <span class="badge bg-success ms-2">In Stock</span>
+                    {% else %}
+                    <span class="badge bg-danger ms-2">Out of Stock</span>
+                    {% endif %}
+                </div>
+                
+                <div class="product-description mb-4">
+                    <p>{{ page.description }}</p>
+                </div>
+                
+                <div class="product-actions mb-4">
+                    <a href="{{ site.preorder_form_url }}" class="btn btn-primary btn-lg">Pre-Order Now</a>
+                </div>
+                
+                <!-- Social Sharing Buttons -->                <div class="social-sharing mt-4">
+                    <p class="mb-2 fw-bold">Share this product:</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://api.whatsapp.com/send?text={{ page.name | url_encode }}%20from%20{{ site.title | url_encode }}%0A%0A{{ page.description | url_encode }}%0A%0A💰 Price: ${{ page.price }}%0A%0A📋 View details: {{ site.url }}{{ page.url | url_encode }}%0A%0A🛒 Pre-order now: {{ site.preorder_form_url | url_encode }}" target="_blank" class="btn btn-success btn-sm">
+                            <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | url_encode }}" target="_blank" class="btn btn-primary btn-sm">
+                            <i class="bi bi-facebook me-1"></i> Facebook
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=Check out this {{ page.name | url_encode }} from {{ site.title | url_encode }}! Perfect for medical students and professionals.&url={{ site.url }}{{ page.url | url_encode }}" target="_blank" class="btn btn-info btn-sm text-white">
+                            <i class="bi bi-twitter me-1"></i> Twitter
+                        </a>
+                    </div>
+                </div>
+                  <!-- Product Metadata - Helps with SEO -->
+                <div class="product-metadata mt-4 pt-4 border-top">
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <small class="text-muted d-block">Category:</small>
+                            <span>{{ page.category }}</span>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <small class="text-muted d-block">SKU:</small>
+                            <span>MED-{{ page.id }}</span>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <small class="text-muted d-block">Availability:</small>
+                            <span>{% if page.stock > 0 %}In Stock ({{ page.stock }} available){% else %}Out of Stock{% endif %}</span>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <small class="text-muted d-block">Share via WhatsApp:</small>
+                            <a href="https://api.whatsapp.com/send?text=Check out this {{ page.name | url_encode }} from {{ site.title | url_encode }}! %0A%0A{{ page.description | url_encode }}%0A%0A💰 ${{ page.price }}%0A%0A🔗 {{ site.url }}{{ page.url | url_encode }}" target="_blank" class="text-success">
+                                <i class="bi bi-whatsapp fs-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating WhatsApp Share Button (mobile-friendly) -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <a href="#" class="btn btn-success rounded-circle shadow-lg d-md-none whatsapp-floating-share" 
+       data-product-name="{{ page.name }}" 
+       data-product-desc="{{ page.description }}" 
+       data-product-price="{{ page.price }}" 
+       data-product-url="{{ site.url }}{{ page.url }}">
+        <i class="bi bi-whatsapp fs-4"></i>
+    </a>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const whatsappBtn = document.querySelector('.whatsapp-floating-share');
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const name = this.getAttribute('data-product-name');
+                const desc = this.getAttribute('data-product-desc');
+                const price = this.getAttribute('data-product-price');
+                const url = this.getAttribute('data-product-url');
+                
+                const text = `Check out this ${name} from Medbase!\n\n${desc}\n\n💰 $${price}\n\n🔗 ${url}`;
+                const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        }
+    });
+</script>
+
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Store",
+      "item": "{{ site.url }}/store"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.category }}",
+      "item": "{{ site.url }}/store#{{ page.category | downcase | replace: ' ', '-' }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ page.name }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+
+<!-- Product Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ page.name }}",
+  "image": [
+    "{{ page.cover_image }}"{% if page.gallery %}{% for image in page.gallery %},
+    "{{ image }}"{% endfor %}{% endif %}
+  ],
+  "description": "{{ page.description }}",
+  "sku": "MED-{{ page.id }}",
+  "mpn": "MED-{{ page.id }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Medbase"
+  },
+  "category": "{{ page.category }}",
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ site.url }}{{ page.url }}",
+    "priceCurrency": "USD",
+    "price": "{{ page.price }}",
+    "priceValidUntil": "2025-07-31",
+    "availability": "{% if page.stock > 0 %}https://schema.org/InStock{% else %}https://schema.org/OutOfStock{% endif %}",
+    "itemCondition": "https://schema.org/NewCondition",
+    "seller": {
+      "@type": "Organization",
+      "name": "Medbase"
+    }
+  }
+}
+</script>
+
+<!-- Related Products Section -->
+<section class="related-products py-5 bg-light">
+    <div class="container">
+        <h2 class="mb-4">You May Also Like</h2>
+        <div class="row">
+            {% assign related_products = site.products | where: "category", page.category | where_exp: "item", "item.name != page.name" | sample: 3 %}
+            {% for product in related_products %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{{ product.cover_image }}" class="card-img-top" alt="{{ product.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text text-muted">${{ product.price }}</p>
+                        <a href="{{ product.url }}" class="btn btn-outline-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

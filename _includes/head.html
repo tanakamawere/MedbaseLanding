@@ -1,5 +1,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 
     <!--Meta tags-->
@@ -7,13 +8,24 @@
 <meta name="title" content="{{ page.title }} - {{ site.title }}" />
 <meta name="description" content="{{ page.description }}" />
 <meta name="keywords" content="{{ page.keywords }}">
+<meta name="author" content="{{ site.author.name }}">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content="{% if page.layout == 'default' and page.name %}product{% else %}website{% endif %}" />
 <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
 <meta property="og:title" content="{{ page.title }} - {{ site.title }}" />
 <meta property="og:description" content="{{ page.description }}" />
 <meta property="og:image" content="{{ page.cover_image }}" />
+<meta property="og:image:alt" content="{{ page.title }} - {{ site.title }}" />
+<meta property="og:site_name" content="{{ site.title }}" />
+{% if page.layout == 'default' and page.name %}
+<meta property="og:price:amount" content="{{ page.price }}" />
+<meta property="og:price:currency" content="USD" />
+<meta property="product:availability" content="{% if page.stock > 0 %}in stock{% else %}out of stock{% endif %}" />
+<meta property="product:brand" content="Medbase" />
+<meta property="product:condition" content="new" />
+<meta property="product:retailer_item_id" content="MED-{{ page.id }}" />
+{% endif %}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -21,6 +33,15 @@
 <meta property="twitter:title" content="{{ page.title }} - {{ site.title }}" />
 <meta property="twitter:description" content="{{ page.description }}" />
 <meta property="twitter:image" content="{{ page.cover_image }}" />
+<meta name="twitter:label1" value="Price" />
+<meta name="twitter:data1" value="${{ page.price }}" />
+<meta name="twitter:label2" value="Category" />
+<meta name="twitter:data2" value="{{ page.category }}" />
+
+<!-- WhatsApp Preview -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
 
 <!--Browser Toolbar Colour-->
 

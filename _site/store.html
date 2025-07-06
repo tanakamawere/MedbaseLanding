@@ -2,27 +2,48 @@
 <html lang="en-US">
   <head><meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <link rel="canonical" href="http://localhost:4000/store" />
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--Meta tags-->
     <!-- Primary Meta Tags -->
-<meta name="title" content="Store - Medbase" />
-<meta name="description" content="Welcome to the Medbase store! Find a collection of products and services to help you navigate the world of medicine and healthcare." />
-<meta name="keywords" content="Medbase, medical school, stethoscopes, tendon hammer, Zimbabwe, Harare, Bulawayo, UZ, medicine, products, services, books, equipment, accessories, apparel, medical supplies">
+<meta name="title" content="Store | Medical Equipment Pre-Orders - Medbase" />
+<meta name="description" content="Pre-order essential medical equipment and supplies for medical students. Special bundle offers with discounts on stethoscopes, tendon hammers, and more. Limited-time offer ends July 31, 2025." />
+<meta name="keywords" content="Medbase, medical school, pre-order, stethoscopes, tendon hammer, bundles, discount, Zimbabwe, Harare, Bulawayo, UZ, medicine, products, services, medical equipment, clinical rotations, student supplies">
+<meta name="author" content="Medbase Team">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content="product" />
 <meta property="og:url" content="http://localhost:4000/store" />
-<meta property="og:title" content="Store - Medbase" />
-<meta property="og:description" content="Welcome to the Medbase store! Find a collection of products and services to help you navigate the world of medicine and healthcare." />
+<meta property="og:title" content="Store | Medical Equipment Pre-Orders - Medbase" />
+<meta property="og:description" content="Pre-order essential medical equipment and supplies for medical students. Special bundle offers with discounts on stethoscopes, tendon hammers, and more. Limited-time offer ends July 31, 2025." />
 <meta property="og:image" content="https://i.postimg.cc/cChjwT3X/Frame.png" />
+<meta property="og:image:alt" content="Store | Medical Equipment Pre-Orders - Medbase" />
+<meta property="og:site_name" content="Medbase" />
+
+<meta property="og:price:amount" content="" />
+<meta property="og:price:currency" content="USD" />
+<meta property="product:availability" content="out of stock" />
+<meta property="product:brand" content="Medbase" />
+<meta property="product:condition" content="new" />
+<meta property="product:retailer_item_id" content="MED-" />
+
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="http://localhost:4000/store" />
-<meta property="twitter:title" content="Store - Medbase" />
-<meta property="twitter:description" content="Welcome to the Medbase store! Find a collection of products and services to help you navigate the world of medicine and healthcare." />
+<meta property="twitter:title" content="Store | Medical Equipment Pre-Orders - Medbase" />
+<meta property="twitter:description" content="Pre-order essential medical equipment and supplies for medical students. Special bundle offers with discounts on stethoscopes, tendon hammers, and more. Limited-time offer ends July 31, 2025." />
 <meta property="twitter:image" content="https://i.postimg.cc/cChjwT3X/Frame.png" />
+<meta name="twitter:label1" value="Price" />
+<meta name="twitter:data1" value="$" />
+<meta name="twitter:label2" value="Category" />
+<meta name="twitter:data2" value="" />
+
+<!-- WhatsApp Preview -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
 
 <!--Browser Toolbar Colour-->
 
@@ -94,7 +115,6 @@
         <ul>
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
-          <li><a href="/blog" class="nav-link">Blog</a></li>
           <li><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -121,6 +141,24 @@
       <section id="hero" class="hero section">
     <div class="container my-5">
         
+        <!-- Pre-order Jumbotron -->
+        <div class="p-5 mb-4 bg-primary text-white rounded-3 shadow-lg" data-aos="fade-up" data-aos-delay="100">
+            <div class="container-fluid py-5">
+                <div class="row align-items-center">
+                    <div class="col-md-8">                        <h1 class="display-5 fw-bold">Limited Time Pre-Orders Now Open!</h1>
+                        <p class="fs-5">Be the first to get your hands on our premium medical equipment and supplies. Pre-order today and receive a special Medbase-branded cap!</p>
+                        <p class="fs-6 fst-italic">Pre-order deadline: July 31, 2025</p>
+                        <a href="https://forms.gle/m1btYSLQbxQGVTrb8" class="btn btn-light btn-lg text-primary fw-bold mt-3 px-4 py-2">
+                            <i class="bi bi-cart-plus-fill me-2"></i>Pre-Order Now
+                        </a>
+                    </div>
+                    <div class="col-md-4 d-none d-md-block text-center">
+                        <img src="assets/img/medbase_transparent.png" alt="Medical equipment" class="img-fluid" style="max-height: 200px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container-fluid py-5" data-aos="fade-up">
             <h1 class="display-6 fw-bold">Medbase Store</h2>
             <p class="col-md-8 fs-6">
@@ -130,246 +168,533 @@
             </p>
         </div>
 
-
-        <div class="d-flex justify-content-end mb-4 align-items-center" data-aos="fade-up" data-aos-delay="50">
-            <label for="searchBox" class="me-2">Search:</label>
-            <input type="text" id="searchBox" class="form-control me-4 width-auto" onkeyup="searchProducts()" placeholder="Search products...">
-            <label for="categoryFilter" class="me-2">Category:</label>
-            <select id="categoryFilter" class="form-select me-4 width-auto" onchange="filterProducts()">
-                <option value="all">All Categories</option>
-                <option value="Books & Study Material">Books & Study Material</option>
-                <option value="Equipment">Equipment</option>
-                <option value="Accessories">Accessories</option>
-                <option value="Apparel">Apparel</option>
-                <option value="First Aid & Medical Supplies">First Aid & Medical Supplies</option>
-            </select>
-            <label for="priceSort" class="me-2">Sort by Price:</label>
-            <select id="priceSort" title="priceSorter" class="form-select width-auto" onchange="sortProductsByPrice()">
-                <option value="asc">Low to High</option>
-                <option value="desc">High to Low</option>
-            </select>
-        </div>
-        <div class="row" id="productContainer" data-aos="fade-up" data-aos-delay="150">
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Apparel" data-price="5" data-name="Medbase Cap">
-                    <div class="card">
-                        <img src="https://cdnp.sanmar.com/medias/sys_master/images/images/h35/h01/14244802396190/1200W-null.jpg" class="card-img-top text-center" alt="https://cdnp.sanmar.com/medias/sys_master/images/images/h35/h01/14244802396190/1200W-null.jpg">
-                        <div class="card-body">
-                            <a href="/product/cap/">
-                                <h2>
-                                    Medbase Cap
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $5
-                            </h4>
-                            <p class="card-text">A stylish Medbase cap that helps you show your pride while keeping the sun out of your eyes. Made from high-quality materials for durability and comfort.</p>
-                            <a href="/product/cap/" class="btn btn-primary">Buy</a>
+        <!-- Store Navigation Tabs -->
+        <ul class="nav nav-pills mb-4 store-tabs" id="storeTab" role="tablist" data-aos="fade-up">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="bundles-tab" data-bs-toggle="pill" data-bs-target="#bundles" type="button" role="tab" aria-controls="bundles" aria-selected="true">
+                    <i class="bi bi-box-seam me-2"></i>Bundle Packs
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="products-tab" data-bs-toggle="pill" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">
+                    <i class="bi bi-grid-3x3-gap me-2"></i>Individual Products
+                </button>
+            </li>
+        </ul>
+        
+        <!-- Tab Content -->
+        <div class="tab-content" id="storeTabContent">
+            <!-- Bundles Tab -->
+            <div class="tab-pane fade show active" id="bundles" role="tabpanel" aria-labelledby="bundles-tab">
+                <!-- Bundle Packs Section -->
+                <div class="container-fluid mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h2 class="fw-bold text-primary">Special Pre-Order Bundle Packs</h2>
+                            <p class="lead">Save money and get everything you need with our specially curated bundle packs</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Why Choose a Bundle Section -->
+                    <div class="row mb-5 bundle-benefits-section" data-aos="fade-up">
+                        <div class="col-lg-4 mb-4">
+                            <div class="why-bundle-card h-100">
+                                <div class="icon-container">
+                                    <i class="bi bi-cash-coin"></i>
+                                </div>
+                                <h4>Save Money</h4>
+                                <p>Our bundles are priced to save you money compared to buying each item individually. Get more value for your investment!</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="why-bundle-card h-100">
+                                <div class="icon-container">
+                                    <i class="bi bi-check2-all"></i>
+                                </div>
+                                <h4>Everything You Need</h4>
+                                <p>Our bundles are carefully curated to include all essential items for medical students, ensuring you're fully prepared from day one.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <div class="why-bundle-card h-100">
+                                <div class="icon-container">
+                                    <i class="bi bi-hand-thumbs-up"></i>
+                                </div>
+                                <h4>Quality Guaranteed</h4>
+                                <p>All items in our bundles are high-quality, durable products selected specifically for medical students and professionals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row g-4 mb-5">
+                        <!-- Starter Bundle -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                            <div class="card h-100 border-0 bundle-card">
+                                <div class="card-header bg-light text-center p-3">
+                                    <span class="badge bg-primary mb-2">Basic</span>
+                                    <h3 class="fw-bold">Starter Bundle</h3>
+                                    <p class="text-muted mb-0">"Clinical Basics"</p>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <div class="bundle-price text-center mb-3">
+                                        <span class="display-6 fw-bold">$80</span>
+                                    </div>
+                                    <p class="text-center fst-italic mb-4">For students on a tight budget but needing essentials to start clinicals</p>
+                                    <ul class="bundle-features">
+                                        <li>Littmann stethoscope</li>
+                                        <li>Rechargeable pen torch</li>
+                                        <li>Tendon hammer</li>
+                                        <li>Name tag</li>
+                                        <li>Tape measure</li>
+                                    </ul>
+                                    <div class="bundle-benefits mt-auto">
+                                        <p class="fw-bold mb-1">Benefits:</p>
+                                        <ul class="benefits-list">
+                                            <li>Covers the absolute must-haves for basic examinations</li>
+                                            <li>Professional look with name tag</li>                                    <li>Reusable penlight avoids battery hustle</li>
+                                </ul>
+                            </div>
+                            <a href="https://forms.gle/m1btYSLQbxQGVTrb8" class="btn btn-outline-primary w-100 mt-3 bundle-btn">Pre-Order Now</a>
                         </div>
                     </div>
                 </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="2" data-name="Medical Clipboard">
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg" class="card-img-top text-center" alt="https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg">
-                        <div class="card-body">
-                            <a href="/product/clipboard/">
-                                <h2>
-                                    Medical Clipboard
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $2
-                            </h4>
-                            <p class="card-text">A sturdy clipboard with a built-in storage compartment,perfect for keeping patient notes and documents organized during rounds.</p>
-                            <a href="/product/clipboard/" class="btn btn-primary">Buy</a>
+                        
+                        <!-- Standard Bundle -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card h-100 border-0 bundle-card popular">
+                                <div class="ribbon">Most Popular</div>
+                                <div class="card-header bg-primary text-white text-center p-3">
+                                    <span class="badge bg-warning text-dark mb-2">Value Choice</span>
+                                    <h3 class="fw-bold">Standard Bundle</h3>
+                                    <p class="text-white-50 mb-0">"Clinical Essentials"</p>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <div class="bundle-price text-center mb-3">
+                                        <span class="display-6 fw-bold">$100</span>
+                                    </div>
+                                    <p class="text-center fst-italic mb-4">For students who want functionality plus style and organization</p>
+                                    <ul class="bundle-features">
+                                        <li>Littmann stethoscope</li>
+                                        <li>Rechargeable pen torch</li>
+                                        <li>Tendon hammer</li>
+                                        <li>Name tag</li>
+                                        <li>Tape measure</li>
+                                        <li>Stethoscope holder</li>
+                                        <li>Personalised stethoscope bag</li>
+                                        <li>Clipboard</li>
+                                    </ul>
+                                    <div class="bundle-benefits mt-auto">
+                                        <p class="fw-bold mb-1">Benefits:</p>
+                                        <ul class="benefits-list">
+                                            <li>Combines practicality with organisation and mobility</li>
+                                            <li>Encourages good habits (clipboards, holders)</li>                                    <li>Professional vibe with personalised gear</li>
+                                </ul>
+                            </div>
+                            <a href="https://forms.gle/m1btYSLQbxQGVTrb8" class="btn btn-primary w-100 mt-3 bundle-btn">Pre-Order Now</a>
                         </div>
                     </div>
                 </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Scrubs & Clothing" data-price="10.0" data-name="Professional Lab Coat">
-                    <div class="card">
-                        <img src="assets/img/products/professional-lab-coat-cover.jpg" class="card-img-top text-center" alt="assets/img/products/professional-lab-coat-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/labcoat/">
-                                <h2>
-                                    Professional Lab Coat
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $10.0
-                            </h4>
-                            <p class="card-text">A premium, durable lab coat designed for medical students and professionals. Made from high-quality fabric, this coat offers comfort and protection during long hours in the clinic or lab.</p>
-                            <a href="/product/labcoat/" class="btn btn-primary">Buy</a>
+                        
+                        <!-- Premium Bundle -->
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+                            <div class="card h-100 border-0 bundle-card">
+                                <div class="card-header bg-dark text-white text-center p-3">
+                                    <span class="badge bg-info mb-2">Premium</span>
+                                    <h3 class="fw-bold">Premium Bundle</h3>
+                                    <p class="text-white-50 mb-0">"Clinical Pro Kit"</p>
+                                </div>
+                                <div class="card-body d-flex flex-column">
+                                    <div class="bundle-price text-center mb-3">
+                                        <span class="display-6 fw-bold">$130</span>
+                                    </div>
+                                    <p class="text-center fst-italic mb-4">For students who want to look the part and own every tool they'll need</p>
+                                    <ul class="bundle-features">
+                                        <li>Littmann stethoscope</li>
+                                        <li>Rechargeable pen torch</li>
+                                        <li>Tendon hammer</li>
+                                        <li>Name tag</li>
+                                        <li>Tape measure</li>
+                                        <li>Stethoscope holder</li>
+                                        <li>Personalised stethoscope bag</li>
+                                        <li>Clipboard</li>
+                                        <li>Lab coat</li>
+                                        <li>One pair of scrubs</li>
+                                    </ul>
+                                    <div class="bundle-benefits mt-auto">
+                                        <p class="fw-bold mb-1">Benefits:</p>
+                                        <ul class="benefits-list">
+                                            <li>All-in-one bundle: tools + clothing + branding</li>
+                                            <li>Makes the student stand out confidently</li>                                    <li>Great for gifts or "first day of clinicals" prep</li>
+                                </ul>
+                            </div>
+                            <a href="https://forms.gle/m1btYSLQbxQGVTrb8" class="btn btn-outline-primary w-100 mt-3 bundle-btn">Pre-Order Now</a>
                         </div>
                     </div>
                 </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Personalization" data-price="14.99" data-name="Custom Name Tag">
-                    <div class="card">
-                        <img src="https://m.media-amazon.com/images/I/81Wav1OMY1L.jpg" class="card-img-top text-center" alt="https://m.media-amazon.com/images/I/81Wav1OMY1L.jpg">
-                        <div class="card-body">
-                            <a href="/product/name-tags/">
-                                <h2>
-                                    Custom Name Tag
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $14.99
-                            </h4>
-                            <p class="card-text">Personalized name tags for medical students and healthcare professionals. Choose your name, title, and department.</p>
-                            <a href="/product/name-tags/" class="btn btn-primary">Buy</a>
-                        </div>
                     </div>
                 </div>
+            </div>
             
-                <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="5.0" data-name="LED Pen Torch">
-                    <div class="card">
-                        <img src="assets/img/products/pen-torch-cover.jpg" class="card-img-top text-center" alt="assets/img/products/pen-torch-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/pen-torch/">
-                                <h2>
-                                    LED Pen Torch
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $5.0
-                            </h4>
-                            <p class="card-text">A durable and lightweight pen torch with a bright LED light, ideal for pupil examination and general use.</p>
-                            <a href="/product/pen-torch/" class="btn btn-primary">Buy</a>
-                        </div>
-                    </div>
+            <!-- Products Tab -->
+            <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+                <div class="d-flex justify-content-end mb-4 align-items-center" data-aos="fade-up" data-aos-delay="50">
+                    <label for="searchBox" class="me-2">Search:</label>
+                    <input type="text" id="searchBox" class="form-control me-4 width-auto" onkeyup="searchProducts()" placeholder="Search products...">
+                    <label for="categoryFilter" class="me-2">Category:</label>
+                    <select id="categoryFilter" class="form-select me-4 width-auto" onchange="filterProducts()">
+                        <option value="all">All Categories</option>
+                        <option value="Books & Study Material">Books & Study Material</option>
+                        <option value="Equipment">Equipment</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Apparel">Apparel</option>
+                        <option value="First Aid & Medical Supplies">First Aid & Medical Supplies</option>
+                    </select>
+                    <label for="priceSort" class="me-2">Sort by Price:</label>
+                    <select id="priceSort" title="priceSorter" class="form-select width-auto" onchange="sortProductsByPrice()">
+                        <option value="asc">Low to High</option>
+                        <option value="desc">High to Low</option>
+                    </select>
                 </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Scrubs & Clothing" data-price="10.0" data-name="Medbase T-Shirt (Long Sleeve)">
-                    <div class="card">
-                        <img src="assets/img/products/medbase-tshirt-long-sleeve-cover.jpg" class="card-img-top text-center" alt="assets/img/products/medbase-tshirt-long-sleeve-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/shirt-long-sleeve/">
-                                <h2>
-                                    Medbase T-Shirt (Long Sleeve)
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $10.0
-                            </h4>
-                            <p class="card-text">A stylish Medbase long-sleeve T-shirt made from soft, high-quality cotton. Ideal for layering or cooler weather, and great for medical students who want to show their school pride.</p>
-                            <a href="/product/shirt-long-sleeve/" class="btn btn-primary">Buy</a>
+                <div class="row" id="productContainer" data-aos="fade-up" data-aos-delay="150">
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Apparel" data-price="5" data-name="Medbase Cap">
+                            <div class="card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwtPAbtQU4yWXGIstcxXjCieAw0sLE1qOq8A&s" class="card-img-top text-center" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwtPAbtQU4yWXGIstcxXjCieAw0sLE1qOq8A&s">
+                                <div class="card-body">
+                                    <a href="/product/cap/">
+                                        <h2>
+                                            Medbase Cap
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $5
+                                    </h4>
+                                    <p class="card-text">A stylish Medbase cap that helps you show your pride while keeping the sun out of your eyes. Made from high-quality materials for durability and comfort.</p>
+                                    <a href="/product/cap/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Scrubs & Clothing" data-price="10.0" data-name="Medbase T-Shirt (Short Sleeve)">
-                    <div class="card">
-                        <img src="assets/img/products/medbase-tshirt-short-sleeve-cover.jpg" class="card-img-top text-center" alt="assets/img/products/medbase-tshirt-short-sleeve-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/shirt-short-sleeve/">
-                                <h2>
-                                    Medbase T-Shirt (Short Sleeve)
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $10.0
-                            </h4>
-                            <p class="card-text">A comfortable, breathable Medbase short-sleeve T-shirt made from high-quality cotton. Perfect for casual wear or medical student events. Available in various sizes and colors.</p>
-                            <a href="/product/shirt-short-sleeve/" class="btn btn-primary">Buy</a>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="2" data-name="Medical Clipboard">
+                            <div class="card">
+                                <img src="https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg" class="card-img-top text-center" alt="https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg">
+                                <div class="card-body">
+                                    <a href="/product/clipboard/">
+                                        <h2>
+                                            Medical Clipboard
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $2
+                                    </h4>
+                                    <p class="card-text">A sturdy clipboard with a built-in storage compartment,perfect for keeping patient notes and documents organized during rounds.</p>
+                                    <a href="/product/clipboard/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="5.0" data-name="Stethoscope Holder">
-                    <div class="card">
-                        <img src="assets/img/products/stethoscope-holder-cover.jpg" class="card-img-top text-center" alt="assets/img/products/stethoscope-holder-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/steth-holder/">
-                                <h2>
-                                    Stethoscope Holder
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $5.0
-                            </h4>
-                            <p class="card-text">A practical and sturdy stethoscope holder that attaches easily to your lab coat or belt, ensuring your stethoscope is always within reach.</p>
-                            <a href="/product/steth-holder/" class="btn btn-primary">Buy</a>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Scrubs & Clothing" data-price="10.0" data-name="Professional Lab Coat">
+                            <div class="card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDk4Mkpxoz41F1r0YsTxTolMThPyGXRJ-kOw&s" class="card-img-top text-center" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDk4Mkpxoz41F1r0YsTxTolMThPyGXRJ-kOw&s">
+                                <div class="card-body">
+                                    <a href="/product/labcoat/">
+                                        <h2>
+                                            Professional Lab Coat
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $10.0
+                                    </h4>
+                                    <p class="card-text">A premium, durable lab coat designed for medical students and professionals. Made from high-quality fabric, this coat offers comfort and protection during long hours in the clinic or lab.</p>
+                                    <a href="/product/labcoat/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="10.0" data-name="Stethoscope Bag">
-                    <div class="card">
-                        <img src="assets/img/products/stethoscope-bag-cover.jpg" class="card-img-top text-center" alt="assets/img/products/stethoscope-bag-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/stethobag/">
-                                <h2>
-                                    Stethoscope Bag
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $10.0
-                            </h4>
-                            <p class="card-text">A high-quality stethoscope bag designed to securely store and carry your stethoscope and other medical tools. Available with optional custom embroidery for an additional $5.</p>
-                            <a href="/product/stethobag/" class="btn btn-primary">Buy</a>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Personalization" data-price="14.99" data-name="Custom Name Tag">
+                            <div class="card">
+                                <img src="https://m.media-amazon.com/images/I/81Wav1OMY1L.jpg" class="card-img-top text-center" alt="https://m.media-amazon.com/images/I/81Wav1OMY1L.jpg">
+                                <div class="card-body">
+                                    <a href="/product/name-tags/">
+                                        <h2>
+                                            Custom Name Tag
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $14.99
+                                    </h4>
+                                    <p class="card-text">Personalized name tags for medical students and healthcare professionals. Choose your name, title, and department.</p>
+                                    <a href="/product/name-tags/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Equipment" data-price="49.99" data-name="Professional Stethoscope">
-                    <div class="card">
-                        <img src="assets/img/products/stethoscope-cover.jpg" class="card-img-top text-center" alt="assets/img/products/stethoscope-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/stethoscope/">
-                                <h2>
-                                    Professional Stethoscope
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $49.99
-                            </h4>
-                            <p class="card-text">A high-quality stethoscope designed for medical students and professionals, providing excellent acoustics for auscultation.</p>
-                            <a href="/product/stethoscope/" class="btn btn-primary">Buy</a>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="5.0" data-name="LED Pen Torch">
+                            <div class="card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9OMUGqY30xOWQHTPbGJAJ5DKn9ah9B4TalQ&s" class="card-img-top text-center" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9OMUGqY30xOWQHTPbGJAJ5DKn9ah9B4TalQ&s">
+                                <div class="card-body">
+                                    <a href="/product/pen-torch/">
+                                        <h2>
+                                            LED Pen Torch
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $5.0
+                                    </h4>
+                                    <p class="card-text">A durable and lightweight pen torch with a bright LED light, ideal for pupil examination and general use.</p>
+                                    <a href="/product/pen-torch/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Equipment" data-price="14.99" data-name="Medical Tape Measure">
-                    <div class="card">
-                        <img src="assets/img/products/medical-tape-measure-cover.jpg" class="card-img-top text-center" alt="assets/img/products/medical-tape-measure-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/tapemeasure/">
-                                <h2>
-                                    Medical Tape Measure
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $14.99
-                            </h4>
-                            <p class="card-text">A durable and flexible medical tape measure, perfect for measuring body circumference and wound size. Made with high-quality materials for accurate measurements.</p>
-                            <a href="/product/tapemeasure/" class="btn btn-primary">Buy</a>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Scrubs & Clothing" data-price="10.0" data-name="Medbase T-Shirt (Long Sleeve)">
+                            <div class="card">
+                                <img src="assets/img/products/medbase-tshirt-long-sleeve-cover.jpg" class="card-img-top text-center" alt="assets/img/products/medbase-tshirt-long-sleeve-cover.jpg">
+                                <div class="card-body">
+                                    <a href="/product/shirt-long-sleeve/">
+                                        <h2>
+                                            Medbase T-Shirt (Long Sleeve)
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $10.0
+                                    </h4>
+                                    <p class="card-text">A stylish Medbase long-sleeve T-shirt made from soft, high-quality cotton. Ideal for layering or cooler weather, and great for medical students who want to show their school pride.</p>
+                                    <a href="/product/shirt-long-sleeve/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            
-                <div class="col-md-3 mb-3 product-card" data-category="Equipment" data-price="5" data-name="Tendon Hammer">
-                    <div class="card">
-                        <img src="assets/img/products/tendon-hammer-cover.jpg" class="card-img-top text-center" alt="assets/img/products/tendon-hammer-cover.jpg">
-                        <div class="card-body">
-                            <a href="/product/tendon-hammer/">
-                                <h2>
-                                    Tendon Hammer
-                                </h2>
-                            </a>
-                            <h4>
-                                Price: $5
-                            </h4>
-                            <p class="card-text">A high-quality tendon hammer used for reflex tests and neurological examinations. Features a comfortable grip and durable construction, ensuring accuracy and reliability.</p>
-                            <a href="/product/tendon-hammer/" class="btn btn-primary">Buy</a>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Scrubs & Clothing" data-price="10.0" data-name="Medbase T-Shirt (Short Sleeve)">
+                            <div class="card">
+                                <img src="assets/img/products/medbase-tshirt-short-sleeve-cover.jpg" class="card-img-top text-center" alt="assets/img/products/medbase-tshirt-short-sleeve-cover.jpg">
+                                <div class="card-body">
+                                    <a href="/product/shirt-short-sleeve/">
+                                        <h2>
+                                            Medbase T-Shirt (Short Sleeve)
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $10.0
+                                    </h4>
+                                    <p class="card-text">A comfortable, breathable Medbase short-sleeve T-shirt made from high-quality cotton. Perfect for casual wear or medical student events. Available in various sizes and colors.</p>
+                                    <a href="/product/shirt-short-sleeve/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="5.0" data-name="Stethoscope Holder">
+                            <div class="card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ7dtF-za3dvykRbfe7yPROd5EjokP2tjK0w&s" class="card-img-top text-center" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ7dtF-za3dvykRbfe7yPROd5EjokP2tjK0w&s">
+                                <div class="card-body">
+                                    <a href="/product/steth-holder/">
+                                        <h2>
+                                            Stethoscope Holder
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $5.0
+                                    </h4>
+                                    <p class="card-text">A practical and sturdy stethoscope holder that attaches easily to your lab coat or belt, ensuring your stethoscope is always within reach.</p>
+                                    <a href="/product/steth-holder/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Accessories" data-price="10.0" data-name="Stethoscope Bag">
+                            <div class="card">
+                                <img src="https://www.medisave.eu/cdn/shop/products/cm_pur.jpg?v=1687797978&width=1946" class="card-img-top text-center" alt="https://www.medisave.eu/cdn/shop/products/cm_pur.jpg?v=1687797978&width=1946">
+                                <div class="card-body">
+                                    <a href="/product/stethobag/">
+                                        <h2>
+                                            Stethoscope Bag
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $10.0
+                                    </h4>
+                                    <p class="card-text">A high-quality stethoscope bag designed to securely store and carry your stethoscope and other medical tools. Available with optional custom embroidery for an additional $5.</p>
+                                    <a href="/product/stethobag/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Equipment" data-price="49.99" data-name="Professional Stethoscope">
+                            <div class="card">
+                                <img src="https://medipulseph.com/cdn/shop/files/342538_3M__Littmann__Classic_III__Stethoscope__5910C__Stainless-finish_Chestpiece__Champagne_Rose_Tube_jpg.webp?v=1717063424" class="card-img-top text-center" alt="https://medipulseph.com/cdn/shop/files/342538_3M__Littmann__Classic_III__Stethoscope__5910C__Stainless-finish_Chestpiece__Champagne_Rose_Tube_jpg.webp?v=1717063424">
+                                <div class="card-body">
+                                    <a href="/product/stethoscope/">
+                                        <h2>
+                                            Professional Stethoscope
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $49.99
+                                    </h4>
+                                    <p class="card-text">A high-quality stethoscope designed for medical students and professionals, providing excellent acoustics for auscultation.</p>
+                                    <a href="/product/stethoscope/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Equipment" data-price="14.99" data-name="Medical Tape Measure">
+                            <div class="card">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTAilXVHMGIlwYV7Izt9PxuMJBrnNoUxU31A&s" class="card-img-top text-center" alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTAilXVHMGIlwYV7Izt9PxuMJBrnNoUxU31A&s">
+                                <div class="card-body">
+                                    <a href="/product/tapemeasure/">
+                                        <h2>
+                                            Medical Tape Measure
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $14.99
+                                    </h4>
+                                    <p class="card-text">A durable and flexible medical tape measure, perfect for measuring body circumference and wound size. Made with high-quality materials for accurate measurements.</p>
+                                    <a href="/product/tapemeasure/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-3 mb-3 product-card" data-category="Equipment" data-price="5" data-name="Tendon Hammer">
+                            <div class="card">
+                                <img src="https://www.gerati.com/wp-content/uploads/2020/11/Reflex-Hammer-Queen-Square-2.jpg" class="card-img-top text-center" alt="https://www.gerati.com/wp-content/uploads/2020/11/Reflex-Hammer-Queen-Square-2.jpg">
+                                <div class="card-body">
+                                    <a href="/product/tendon-hammer/">
+                                        <h2>
+                                            Tendon Hammer
+                                        </h2>
+                                    </a>
+                                    <h4>
+                                        Price: $5
+                                    </h4>
+                                    <p class="card-text">A high-quality tendon hammer used for reflex tests and neurological examinations. Features a comfortable grip and durable construction, ensuring accuracy and reliability.</p>
+                                    <a href="/product/tendon-hammer/" class="btn btn-primary">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+                    
                 </div>
-            
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Floating Pre-Order Button -->
+<div class="floating-preorder-btn">
+    <a href="https://forms.gle/m1btYSLQbxQGVTrb8" class="btn btn-primary btn-lg rounded-circle shadow-lg d-flex align-items-center justify-content-center">
+        <i class="bi bi-cart-plus-fill"></i>
+    </a>
+    <div class="preorder-tooltip">Pre-Order Now!</div>
+</div>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "Medbase Store",
+  "description": "Medical equipment and supplies for medical students and professionals",
+  "url": "http://localhost:4000/store",
+  "logo": "http://localhost:4000/assets/img/medbase_transparent.png",
+  "image": "http://localhost:4000/assets/img/medbase_store.png",
+  "telephone": "+263 71 388 1589",
+  "email": "support@medbase.co.zw",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "630 Churchill Avenue",
+    "addressLocality": "Harare",
+    "addressRegion": "Harare",
+    "postalCode": "",
+    "addressCountry": "ZW"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-17.7835",
+    "longitude": "31.0519"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "17:00"
+  },
+  "potentialAction": {
+    "@type": "OrderAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://forms.gle/m1btYSLQbxQGVTrb8",
+      "inLanguage": "en-US",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/IOSPlatform",
+        "http://schema.org/AndroidPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Order",
+      "orderStatus": "http://schema.org/OrderProcessing"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Medical Equipment Bundles",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Starter Bundle",
+          "description": "Essential equipment for medical students. Includes stethoscope, pen torch, and tendon hammer.",
+          "category": "Medical Bundle"
+        },
+        "price": "79.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder",
+        "url": "http://localhost:4000/store#starter-bundle",
+        "validFrom": "2024-05-01",
+        "validThrough": "2025-07-31"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Standard Bundle",
+          "description": "Complete equipment kit for clinical rotations. Includes stethoscope, pen torch, tendon hammer, name tags, and lab coat.",
+          "category": "Medical Bundle"
+        },
+        "price": "129.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder",
+        "url": "http://localhost:4000/store#standard-bundle",
+        "validFrom": "2024-05-01",
+        "validThrough": "2025-07-31"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Premium Bundle",
+          "description": "Professional-grade medical equipment bundle. Includes premium stethoscope, diagnostic set, lab coat, name tags, and more.",
+          "category": "Medical Bundle"
+        },
+        "price": "199.99",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/PreOrder",
+        "url": "http://localhost:4000/store#premium-bundle",
+        "validFrom": "2024-05-01",
+        "validThrough": "2025-07-31"
+      }
+    ]
+  }
+}
+</script>
 
 <script>
 function filterProducts() {
@@ -428,6 +753,266 @@ function searchProducts() {
     }
     .align-items-center {
         align-items: center;
+    }
+    
+    /* Pre-order Jumbotron Styles */
+    .bg-primary {
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%) !important;
+    }
+    
+    .btn-light:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .shadow-lg {
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    }
+    
+    @media (max-width: 768px) {
+        .p-5.mb-4.bg-primary {
+            padding: 2rem !important;
+        }
+    }
+
+    /* Floating Pre-Order Button Styles */
+    .floating-preorder-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1050;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary {
+        background-color: #4e73df;
+        border-color: #4e73df;
+    }
+
+    .btn-primary:hover {
+        background-color: #224abe;
+        border-color: #224abe;
+    }
+
+    .preorder-tooltip {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.875rem;
+        white-space: nowrap;
+    }
+
+    .floating-preorder-btn:hover .preorder-tooltip {
+        display: block;
+    }
+
+    /* Bundle Packs Section Styles */
+    .bundle-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bundle-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .ribbon {
+        position: absolute;
+        top: 15px;
+        right: -10px;
+        background-color: #ffcc00;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.875rem;
+        font-weight: bold;
+        transform: rotate(45deg);
+        white-space: nowrap;
+    }    .popular {
+        position: relative;
+        transform: scale(1.05);
+        z-index: 2;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2) !important;
+    }
+
+    .popular:hover {
+        transform: scale(1.08);
+    }
+
+    .ribbon {
+        position: absolute;
+        top: 15px;
+        right: -35px;
+        background: #ffbf00;
+        color: #333;
+        font-weight: bold;
+        padding: 8px 30px;
+        transform: rotate(45deg);
+        z-index: 3;
+        font-size: 0.85rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .bundle-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #4e73df;
+    }
+
+    .bundle-features {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .bundle-features li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 28px;
+    }
+
+    .bundle-features li:before {
+        content: "✓";
+        color: #4e73df;
+        position: absolute;
+        left: 0;
+        top: 7px;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .benefits-list {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        color: #555;
+    }
+
+    .btn-outline-primary {
+        border-color: #4e73df;
+        color: #4e73df;
+        border-radius: 30px;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #4e73df;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .bundle-card {
+        transition: all 0.3s ease;
+        border-radius: 0.75rem !important;
+        overflow: hidden;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    
+    .bundle-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+    
+    .card-header {
+        border-bottom: none;
+    }
+    
+    .badge {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        letter-spacing: 1px;
+    }
+    
+    /* Store Tab Styles */
+    .store-tabs {
+        border-bottom: 1px solid #dee2e6;
+        margin-bottom: 2rem;
+    }
+    
+    .store-tabs .nav-link {
+        margin-right: 10px;
+        font-weight: bold;
+        color: #555;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 0;
+        position: relative;
+    }
+    
+    .store-tabs .nav-link.active {
+        color: #4e73df;
+        background-color: transparent;
+        border-bottom: 3px solid #4e73df;
+    }
+    
+    .store-tabs .nav-link:hover:not(.active) {
+        background-color: rgba(78, 115, 223, 0.05);
+        color: #4e73df;
+    }
+    
+    .store-tabs .nav-link i {
+        font-size: 1.1rem;
+    }
+    
+    /* Why Bundle Section Styles */
+    .bundle-benefits-section {
+        background-color: rgba(78, 115, 223, 0.05);
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .why-bundle-card {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .why-bundle-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+    
+    .icon-container {
+        background-color: rgba(78, 115, 223, 0.1);
+        color: #4e73df;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.25rem;
+    }
+    
+    .icon-container i {
+        font-size: 2rem;
+    }
+    
+    .why-bundle-card h4 {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #333;
+    }
+    
+    .why-bundle-card p {
+        color: #666;
+        margin-bottom: 0;
     }
 </style>
     </main>

@@ -2,6 +2,7 @@
 <html lang="en-US">
   <head><meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <link rel="canonical" href="http://localhost:4000/product.html" />
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--Meta tags-->
@@ -9,13 +10,24 @@
 <meta name="title" content="{{ page.name }} - Medbase Store - Medbase" />
 <meta name="description" content="{{ page.description }}" />
 <meta name="keywords" content="{{ page.name }}, Medbase, {{ page.category }}, medical products, healthcare, {{ page.keywords }}">
+<meta name="author" content="Medbase Team">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content="product" />
 <meta property="og:url" content="http://localhost:4000/product.html" />
 <meta property="og:title" content="{{ page.name }} - Medbase Store - Medbase" />
 <meta property="og:description" content="{{ page.description }}" />
 <meta property="og:image" content="{}" />
+<meta property="og:image:alt" content="{{ page.name }} - Medbase Store - Medbase" />
+<meta property="og:site_name" content="Medbase" />
+
+<meta property="og:price:amount" content="" />
+<meta property="og:price:currency" content="USD" />
+<meta property="product:availability" content="out of stock" />
+<meta property="product:brand" content="Medbase" />
+<meta property="product:condition" content="new" />
+<meta property="product:retailer_item_id" content="MED-" />
+
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -23,6 +35,15 @@
 <meta property="twitter:title" content="{{ page.name }} - Medbase Store - Medbase" />
 <meta property="twitter:description" content="{{ page.description }}" />
 <meta property="twitter:image" content="{}" />
+<meta name="twitter:label1" value="Price" />
+<meta name="twitter:data1" value="$" />
+<meta name="twitter:label2" value="Category" />
+<meta name="twitter:data2" value="" />
+
+<!-- WhatsApp Preview -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
 
 <!--Browser Toolbar Colour-->
 
@@ -94,7 +115,6 @@
         <ul>
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
-          <li><a href="/blog" class="nav-link">Blog</a></li>
           <li><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

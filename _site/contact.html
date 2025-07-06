@@ -2,6 +2,7 @@
 <html lang="en-US">
   <head><meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
+    <link rel="canonical" href="http://localhost:4000/contact" />
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <!--Meta tags-->
@@ -9,13 +10,24 @@
 <meta name="title" content="Contact - Medbase" />
 <meta name="description" content="Get in touch with Medbase. We are here to assist medical students with all their queries and needs." />
 <meta name="keywords" content="Medbase, contact, medical students, Zimbabwe, Harare, healthcare, medical education, student support">
+<meta name="author" content="Medbase Team">
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content="product" />
 <meta property="og:url" content="http://localhost:4000/contact" />
 <meta property="og:title" content="Contact - Medbase" />
 <meta property="og:description" content="Get in touch with Medbase. We are here to assist medical students with all their queries and needs." />
 <meta property="og:image" content="https://i.postimg.cc/d3FdX3X7/Logo.png" />
+<meta property="og:image:alt" content="Contact - Medbase" />
+<meta property="og:site_name" content="Medbase" />
+
+<meta property="og:price:amount" content="" />
+<meta property="og:price:currency" content="USD" />
+<meta property="product:availability" content="out of stock" />
+<meta property="product:brand" content="Medbase" />
+<meta property="product:condition" content="new" />
+<meta property="product:retailer_item_id" content="MED-" />
+
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -23,6 +35,15 @@
 <meta property="twitter:title" content="Contact - Medbase" />
 <meta property="twitter:description" content="Get in touch with Medbase. We are here to assist medical students with all their queries and needs." />
 <meta property="twitter:image" content="https://i.postimg.cc/d3FdX3X7/Logo.png" />
+<meta name="twitter:label1" value="Price" />
+<meta name="twitter:data1" value="$" />
+<meta name="twitter:label2" value="Category" />
+<meta name="twitter:data2" value="" />
+
+<!-- WhatsApp Preview -->
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
 
 <!--Browser Toolbar Colour-->
 
@@ -94,7 +115,6 @@
         <ul>
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
-          <li><a href="/blog" class="nav-link">Blog</a></li>
           <li><a href="/contact" class="nav-link">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -130,10 +150,9 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
       <div class="row g-4 g-lg-5">
-        <div class="col-lg-5">
-          <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-5">          <div class="info-box" data-aos="fade-up" data-aos-delay="200">
             <h3>Contact Info</h3>
-            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis.</p>
+            <p>We're here to help medical students and professionals with any questions about our products, services, or medical education resources. Reach out to us using any of the methods below.</p>
 
             <div class="info-item" data-aos="fade-up" data-aos-delay="300">
               <div class="icon-box">
@@ -169,28 +188,26 @@
           </div>
         </div>
 
-        <div class="col-lg-7">
-          <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-lg-7">          <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
             <h3>Get In Touch</h3>
-            <p>Old school, email form</p>
+            <p>Have questions about our products, pre-orders, or need assistance with your medical studies? Fill out the form below and we'll get back to you as soon as possible.</p>
 
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">              <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <input type="text" name="name" class="form-control" placeholder="Your Full Name" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email Address" required="">
                 </div>
 
                 <div class="col-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <input type="text" class="form-control" name="subject" placeholder="What is this regarding?" required="">
                 </div>
 
                 <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="How can we help you? Please include details about your inquiry..." required=""></textarea>
                 </div>
 
                 <div class="col-12 text-center">
@@ -204,12 +221,132 @@
               </div>
             </form>
 
+            <div class="contact-additional-info mt-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="card border-0 bg-light p-3">
+                <div class="card-body">
+                  <h5 class="mb-3"><i class="bi bi-clock me-2"></i>Response Times</h5>
+                  <p class="mb-0">We aim to respond to all inquiries within 24-48 hours during business days. For urgent matters related to orders or product information, please contact us directly via phone.</p>
+                </div>
+              </div>
+              
+              <div class="social-media-contact mt-4">
+                <h5 class="mb-3">Connect With Us</h5>
+                <p>You can also reach us through our social media platforms:</p>
+                <div class="social-links d-flex mt-3">
+                  <a href="#" class="me-2"><i class="bi bi-twitter"></i></a>
+                  <a href="#" class="me-2"><i class="bi bi-facebook"></i></a>
+                  <a href="#" class="me-2"><i class="bi bi-instagram"></i></a>
+                  <a href="#" class="me-2"><i class="bi bi-linkedin"></i></a>
+                  <a href="#" class="me-2"><i class="bi bi-whatsapp"></i></a>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
       </div>
 
     </div>
+
+    <!-- FAQ Section -->
+    <div class="container mt-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
+        <div class="col-12 text-center mb-4">
+          <h3>Frequently Asked Questions</h3>
+          <p>Find quick answers to common questions</p>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="accordion" id="faqAccordion1">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  How do I place a pre-order for medical equipment?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion1">
+                <div class="accordion-body">
+                  You can place a pre-order by visiting our <a href="/store">Store page</a> and clicking on the "Pre-Order Now" button for your desired product or bundle. You'll be directed to our pre-order form where you can provide your details and product preferences.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  What payment methods do you accept?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion1">
+                <div class="accordion-body">
+                  We accept various payment methods including EcoCash, OneMoney, bank transfers, and cash payments. Detailed payment instructions will be provided after you submit your pre-order form.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  What is your delivery timeline for pre-orders?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion1">
+                <div class="accordion-body">
+                  Pre-ordered items are typically delivered within 2-3 weeks after the pre-order deadline. We'll keep you updated on the status of your order via email or phone.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="accordion" id="faqAccordion2">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Do you offer student discounts?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion2">
+                <div class="accordion-body">
+                  Yes! We offer special discounts for medical students. Our bundle packs are already discounted compared to buying items individually, and we occasionally run special promotions for students with valid IDs.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  Can I customize the items in a bundle?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion2">
+                <div class="accordion-body">
+                  While our standard bundles have fixed components, we're happy to discuss customizations for bulk orders or special requirements. Please contact us directly to discuss your specific needs.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  How can I access the Medbase learning resources?
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion2">
+                <div class="accordion-body">
+                  Our learning resources are available through the Medbase mobile app, which you can download from the Google Play Store. We're continually adding new content and features to enhance your medical education experience.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End FAQ Section -->
 
   </section><!-- /Contact Section -->
 
@@ -283,6 +420,80 @@
     </div>
   
   </section><!-- /About Section -->
+
+<style>
+  /* Contact Page Styles */
+  .contact-additional-info .card {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-additional-info .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    color: #4e73df;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background-color: #4e73df;
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .accordion-item {
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .accordion-button {
+    font-weight: 600;
+    padding: 15px 20px;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #4e73df;
+    color: white;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+  
+  .accordion-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .btn {
+    padding: 10px 25px;
+    background-color: #4e73df;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #3a5ecc;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+</style>
     </main>
 
     <footer id="footer" class="footer">

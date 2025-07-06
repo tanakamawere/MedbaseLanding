@@ -7,6 +7,9 @@ baseurl: "" # Leave this blank if deploying at the root level
 url: "http://medbase.co.zw" # Update with your actual site URL
 image: "https://i.postimg.cc/d3FdX3X7/Logo.png"
 
+# Forms and external links
+preorder_form_url: "https://forms.gle/m1btYSLQbxQGVTrb8"
+
 # Author information
 author:
   name: "Medbase Team"
