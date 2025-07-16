@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: {{ site.url }}/sitemap.xml
+
+# Disallow admin area
+Disallow: /admin/
+Disallow: /_site/
+Disallow: /assets/vendor/
+
+# Allow important pages
+Allow: /blog/
+Allow: /store/
+Allow: /contact/
+Allow: /product/
+
+# Crawl delay (optional)
+Crawl-delay: 1

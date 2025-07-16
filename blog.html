@@ -9,40 +9,236 @@ keywords: "Medbase, blog, medical students, UZ, NUST, Zimbabwe, medical articles
 cover_image: https://i.postimg.cc/d3FdX3X7/Logo.png
 ---
 
-<section id="hero" class="hero section">
-    <div class="px-5 container">
-        <div class="container-fluid py-5" data-aos="fade-up">
-            <h1 class="display-6 fw-bold">Medbase Blog</h2>
-            <p class="col-md-8 fs-6">
-                Welcome to the Medbase blog! Here you will find a collection of articles, guides, and resources to help you
-                navigate the world of medicine and healthcare. Whether you are a student, a professional, or just someone
-                interested in learning more about health, we have something for you. Enjoy!
-            </p>
+<section id="blog" class="blog section light-background mt-5">
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4" data-aos="fade-up">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+            </ol>
+        </nav>
+        
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Blog</h2>
+            <p>Discover insights, tips, and resources for medical students</p>
         </div>
-    
-    
-        <div class="row gx-5" data-aos="fade-up" data-aos-delay="100">
-            {% assign sorted = paginator.posts | sort: 'date' | reverse  %}
-            {% for post in sorted %}
-                {% include posts-control.html %}
-            {% endfor %}
+
+        <!-- Blog Hero -->
+        <div class="blog-hero text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold text-primary">Medbase Blog</h1>
+                    <p class="lead text-muted">
+                        Welcome to the Medbase blog! Here you will find a collection of articles, guides, and resources to help you
+                        navigate the world of medicine and healthcare. Whether you are a student, a professional, or just someone
+                        interested in learning more about health, we have something for you.
+                    </p>
+                </div>
+            </div>
         </div>
-    
-        <nav  data-aos="fade-up" data-aos-delay="200">
-            {% if paginator.total_pages > 1 %}
-            <ul class="pagination">
+
+        <!-- Blog Posts Grid -->
+        <div class="row gx-5" data-aos="fade-up" data-aos-delay="200">
+            {% assign sorted = paginator.posts | sort: 'date' | reverse %}
+            {% if sorted.size > 0 %}
+                {% for post in sorted %}
+                    {% include posts-control.html %}
+                {% endfor %}
+            {% else %}
+                <div class="col-12">
+                    <div class="text-center py-5">
+                        <div class="mb-4">
+                            <i class="bi bi-journal-text display-1 text-muted"></i>
+                        </div>
+                        <h3 class="text-muted">No blog posts yet</h3>
+                        <p class="text-muted">Check back soon for exciting content!</p>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Pagination -->
+        {% if paginator.total_pages > 1 %}
+        <nav class="blog-pagination" data-aos="fade-up" data-aos-delay="300">
+            <ul class="pagination justify-content-center">
                 {% if paginator.previous_page %}
                 <li class="page-item">
-                    <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+                    <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                        <i class="bi bi-arrow-left me-2"></i>Newer Posts
+                    </a>
                 </li>
                 {% endif %}
+                
+                {% for page in (1..paginator.total_pages) %}
+                    {% if page == paginator.page %}
+                        <li class="page-item active">
+                            <span class="page-link">{{ page }}</span>
+                        </li>
+                    {% elsif page == 1 %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                
                 {% if paginator.next_page %}
                 <li class="page-item">
-                    <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+                    <a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+                        Older Posts<i class="bi bi-arrow-right ms-2"></i>
+                    </a>
                 </li>
                 {% endif %}
             </ul>
-            {% endif %}
         </nav>
+        {% endif %}
     </div>
 </section>
+
+<!-- Newsletter/CTA Section -->
+<section id="blog-cta" class="blog-cta section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+                <div class="bg-primary text-white rounded-4 p-5">
+                    <h3 class="mb-3">Stay Updated with Medical Insights</h3>
+                    <p class="mb-4">Join our community of medical students and professionals. Get the latest articles, study tips, and medical resources delivered to your inbox.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your email address" aria-label="Email">
+                                <button class="btn btn-light text-primary fw-bold" type="button">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Blog Page Styles */
+    .blog {
+        padding: 80px 0;
+    }
+    
+    .blog-hero {
+        margin-bottom: 60px;
+    }
+    
+    .blog-hero h1 {
+        margin-bottom: 30px;
+    }
+    
+    .blog-hero .lead {
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+    
+    .blog-pagination {
+        margin-top: 60px;
+    }
+    
+    .blog-pagination .page-link {
+        color: #4e73df;
+        border-color: #4e73df;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .blog-pagination .page-link:hover {
+        background-color: #4e73df;
+        border-color: #4e73df;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .blog-pagination .page-item.active .page-link {
+        background-color: #4e73df;
+        border-color: #4e73df;
+        color: white;
+    }
+    
+    .blog-cta {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    .blog-cta .bg-primary {
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%) !important;
+    }
+    
+    .blog-cta .form-control {
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px 0 0 25px;
+    }
+    
+    .blog-cta .btn {
+        border-radius: 0 25px 25px 0;
+        padding: 12px 25px;
+        border: none;
+    }
+    
+    .blog-cta .btn:hover {
+        background-color: #f8f9fa !important;
+        transform: translateY(-2px);
+    }
+    
+    /* Card hover effects */
+    .card {
+        transition: all 0.3s ease;
+        border: none;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img-top {
+        transition: all 0.3s ease;
+    }
+    
+    .card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .stretched-link {
+        color: #2c3e50;
+        text-decoration: none;
+    }
+    
+    .stretched-link:hover {
+        color: #4e73df;
+    }
+    
+    @media (max-width: 768px) {
+        .blog-hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .blog-hero .lead {
+            font-size: 1rem;
+        }
+        
+        .blog-pagination .page-link {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+    }
+</style>

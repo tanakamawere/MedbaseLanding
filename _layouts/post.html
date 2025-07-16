@@ -1,0 +1,300 @@
+---
+layout: default
+---
+
+<section id="blog-post" class="blog-post section light-background mt-5">
+  <div class="container" data-aos="fade-up">
+    
+    <!-- Breadcrumbs -->
+    <nav aria-label="breadcrumb" class="mb-4" data-aos="fade-up">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item"><a href="/blog" class="text-decoration-none">Blog</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+      </ol>
+    </nav>
+    
+    <!-- Post Header -->
+    <div class="post-header text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="post-meta text-muted mb-3">
+        <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+        {% if page.categories %}
+          <span class="mx-2">•</span>
+          {% for category in page.categories %}
+            <span class="badge bg-primary me-1">{{ category }}</span>
+          {% endfor %}
+        {% endif %}
+        {% if page.reading_time %}
+          <span class="mx-2">•</span>
+          <span class="reading-time">{{ page.reading_time }} min read</span>
+        {% else %}
+          {% assign words = content | number_of_words %}
+          {% assign reading_time = words | divided_by: 200 %}
+          {% if reading_time < 1 %}
+            {% assign reading_time = 1 %}
+          {% endif %}
+          <span class="mx-2">•</span>
+          <span class="reading-time">{{ reading_time }} min read</span>
+        {% endif %}
+      </div>
+      <h1 class="post-title display-4 fw-bold">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="post-description lead text-muted">{{ page.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Post Thumbnail -->
+    {% if page.thumbnail %}
+    <div class="post-thumbnail mb-5" data-aos="fade-up" data-aos-delay="200">
+      <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title }}" class="img-fluid rounded-4 shadow">
+    </div>
+    {% endif %}
+
+    <!-- Post Content -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <article class="post-content" data-aos="fade-up" data-aos-delay="300">
+          {{ content }}
+        </article>
+
+        <!-- Post Footer -->
+        <div class="post-footer mt-5 pt-4 border-top" data-aos="fade-up" data-aos-delay="400">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="post-tags">
+                {% if page.tags %}
+                  <span class="text-muted me-2">Tags:</span>
+                  {% for tag in page.tags %}
+                    <span class="badge bg-secondary me-1">{{ tag }}</span>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <div class="post-share">
+                <span class="text-muted me-2">Share:</span>
+                <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title }}" class="btn btn-sm btn-outline-primary me-1" target="_blank">
+                  <i class="bi bi-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" class="btn btn-sm btn-outline-primary me-1" target="_blank">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation to other posts -->
+        <div class="post-navigation mt-5" data-aos="fade-up" data-aos-delay="500">
+          <div class="row">
+            {% if page.previous %}
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 bg-light h-100">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Previous Post</h6>
+                  <a href="{{ page.previous.url | relative_url }}" class="card-title text-decoration-none">
+                    {{ page.previous.title }}
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% if page.next %}
+            <div class="col-md-6 mb-3">
+              <div class="card border-0 bg-light h-100">
+                <div class="card-body">
+                  <h6 class="card-subtitle mb-2 text-muted">Next Post</h6>
+                  <a href="{{ page.next.url | relative_url }}" class="card-title text-decoration-none">
+                    {{ page.next.title }}
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Back to Blog -->
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="600">
+          <a href="/blog" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-left me-2"></i>Back to Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Blog Post Styles */
+  .blog-post {
+    padding: 80px 0;
+  }
+  
+  .post-header {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post-title {
+    color: #2c3e50;
+    line-height: 1.2;
+  }
+  
+  .post-description {
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  
+  .post-meta {
+    font-size: 0.9rem;
+  }
+  
+  .post-thumbnail img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+  }
+  
+  .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .post-content h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+  }
+  
+  .post-content h2 {
+    color: #34495e;
+    font-size: 1.8rem;
+  }
+  
+  .post-content h3 {
+    color: #34495e;
+    font-size: 1.5rem;
+  }
+  
+  .post-content p {
+    margin-bottom: 20px;
+  }
+  
+  .post-content blockquote {
+    border-left: 4px solid #4e73df;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .post-content ul, .post-content ol {
+    margin-bottom: 20px;
+    padding-left: 30px;
+  }
+  
+  .post-content li {
+    margin-bottom: 8px;
+  }
+  
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  .post-content code {
+    background-color: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+  
+  .post-content pre {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  
+  .post-content pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .post-footer {
+    margin-top: 50px;
+  }
+  
+  .post-navigation .card {
+    transition: all 0.3s ease;
+  }
+  
+  .post-navigation .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-navigation .card-title {
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  
+  .post-navigation .card-title:hover {
+    color: #4e73df;
+  }
+  
+  .post-share .btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+  
+  .btn-outline-primary {
+    border-color: #4e73df;
+    color: #4e73df;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #4e73df;
+    border-color: #4e73df;
+  }
+  
+  @media (max-width: 768px) {
+    .post-title {
+      font-size: 2rem;
+    }
+    
+    .post-content {
+      font-size: 1rem;
+    }
+    
+    .post-share {
+      margin-top: 20px;
+    }
+  }
+</style>

@@ -115,7 +115,9 @@
         <ul>
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
+          <li><a href="/blog" class="nav-link">Blog</a></li>
           <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li><a href="/admin" class="nav-link admin-link" style="display: none;">Admin</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -129,12 +131,34 @@
     document.addEventListener('DOMContentLoaded', function() {
       const currentPath = window.location.pathname;
       const navLinks = document.querySelectorAll('.nav-link');
+      const adminLink = document.querySelector('.admin-link');
   
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPath) {
           link.classList.add('active');
         }
       });
+      
+      // Show admin link if user is authenticated
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function(user) {
+          if (user && adminLink) {
+            adminLink.style.display = 'block';
+          }
+        });
+        
+        window.netlifyIdentity.on('login', function(user) {
+          if (user && adminLink) {
+            adminLink.style.display = 'block';
+          }
+        });
+        
+        window.netlifyIdentity.on('logout', function() {
+          if (adminLink) {
+            adminLink.style.display = 'none';
+          }
+        });
+      }
     });
   </script>
     <main>
@@ -328,6 +352,17 @@
             
             <div class="col-md-4 mb-4">
                 <div class="card h-100 border-0 shadow-sm">
+                    <img src="https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Medical Clipboard" />
+                    <div class="card-body">
+                        <h5 class="card-title">Medical Clipboard</h5>
+                        <p class="card-text text-muted">$2</p>
+                        <a href="/product/clipboard/" class="btn btn-outline-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
                     <img src="https://www.medisave.eu/cdn/shop/products/cm_pur.jpg?v=1687797978&amp;width=1946" class="card-img-top" alt="Stethoscope Bag" />
                     <div class="card-body">
                         <h5 class="card-title">Stethoscope Bag</h5>
@@ -344,17 +379,6 @@
                         <h5 class="card-title">LED Pen Torch</h5>
                         <p class="card-text text-muted">$5.0</p>
                         <a href="/product/pen-torch/" class="btn btn-outline-primary btn-sm">View Details</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <img src="https://m.media-amazon.com/images/I/91qpn0D7ysL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="Medical Clipboard" />
-                    <div class="card-body">
-                        <h5 class="card-title">Medical Clipboard</h5>
-                        <p class="card-text text-muted">$2</p>
-                        <a href="/product/clipboard/" class="btn btn-outline-primary btn-sm">View Details</a>
                     </div>
                 </div>
             </div>
@@ -427,7 +451,11 @@
   
     <!-- Main JS File -->
     <script src="/assets/js/main.js"></script>
-      <!-- for netlify identity widget -->
+    
+    <!-- Netlify Identity Widget for CMS Authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <!-- CMS Authentication Script -->
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {

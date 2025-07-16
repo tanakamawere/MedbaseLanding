@@ -115,7 +115,9 @@
         <ul>
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/store" class="nav-link">Store</a></li>
+          <li><a href="/blog" class="nav-link">Blog</a></li>
           <li><a href="/contact" class="nav-link">Contact</a></li>
+          <li><a href="/admin" class="nav-link admin-link" style="display: none;">Admin</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -129,68 +131,273 @@
     document.addEventListener('DOMContentLoaded', function() {
       const currentPath = window.location.pathname;
       const navLinks = document.querySelectorAll('.nav-link');
+      const adminLink = document.querySelector('.admin-link');
   
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPath) {
           link.classList.add('active');
         }
       });
+      
+      // Show admin link if user is authenticated
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function(user) {
+          if (user && adminLink) {
+            adminLink.style.display = 'block';
+          }
+        });
+        
+        window.netlifyIdentity.on('login', function(user) {
+          if (user && adminLink) {
+            adminLink.style.display = 'block';
+          }
+        });
+        
+        window.netlifyIdentity.on('logout', function() {
+          if (adminLink) {
+            adminLink.style.display = 'none';
+          }
+        });
+      }
     });
   </script>
     <main>
-      <section id="hero" class="hero section">
-    <div class="px-5 container">
-        <div class="container-fluid py-5" data-aos="fade-up">
-            <h1 class="display-6 fw-bold">Medbase Blog</h2>
-            <p class="col-md-8 fs-6">
-                Welcome to the Medbase blog! Here you will find a collection of articles, guides, and resources to help you
-                navigate the world of medicine and healthcare. Whether you are a student, a professional, or just someone
-                interested in learning more about health, we have something for you. Enjoy!
-            </p>
+      <section id="blog" class="blog section light-background mt-5">
+    <div class="container">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Blog</h2>
+            <p>Discover insights, tips, and resources for medical students</p>
         </div>
-    
-    
-        <div class="row gx-5" data-aos="fade-up" data-aos-delay="100">
-            
-            
-                <div class="col-lg-4 mb-5">
-    <div class="card h-100 shadow border-0">
-        <img class="card-img-top" src="" alt="..." />
-        <div class="card-body p-4 rounded-top">
-            <div class="row">
+
+        <!-- Blog Hero -->
+        <div class="blog-hero text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold text-primary">Medbase Blog</h1>
+                    <p class="lead text-muted">
+                        Welcome to the Medbase blog! Here you will find a collection of articles, guides, and resources to help you
+                        navigate the world of medicine and healthcare. Whether you are a student, a professional, or just someone
+                        interested in learning more about health, we have something for you.
+                    </p>
+                </div>
             </div>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="row gx-5" data-aos="fade-up" data-aos-delay="200">
             
-            <a class="text-decoration-none stretched-link mb-3"
-                href="/2024/12/23/lets-party.html">
-                <h3 class="fw-bold">
+            
+                
+                    <div class="col-lg-4 col-md-6 mb-5">
+    <div class="card h-100 shadow-sm border-0">
+        
+            <div class="card-img-wrapper overflow-hidden">
+                <img class="card-img-top" src="/images/uploads/something-copy.png" alt="Let's Party" />
+            </div>
+        
+        
+        <div class="card-body p-4">
+            <!-- Categories -->
+            
+                <div class="mb-3">
+                      
+                        <span class="badge bg-primary rounded-pill me-1">Events</span>
+                      
+                        <span class="badge bg-primary rounded-pill me-1">Celebration</span>
+                    
+                </div>
+            
+            
+            <!-- Title -->
+            <h3 class="card-title fw-bold mb-3">
+                <a class="text-decoration-none stretched-link text-dark" href="/events/celebration/2024/12/23/lets-party.html">
                     Let's Party
-                </h3>
-            </a>
-            <p class="card-text mb-0">
+                </a>
+            </h3>
+            
+            <!-- Description -->
+            <p class="card-text text-muted mb-3">
+                
+                    Join us for an unforgettable celebration as we explore the excitement and anticipation of the last party before the n...
                 
             </p>
+            
+            <!-- Read More -->
+            <div class="read-more">
+                <span class="text-primary fw-semibold">Read More <i class="bi bi-arrow-right ms-1"></i></span>
+            </div>
         </div>
-        <div class="card-footer p-4 pt-0 p-0 bg-transparent border-top-0">
-            <div class="d-flex align-items-end justify-content-between">
+        
+        <div class="card-footer bg-transparent border-0 p-4 pt-0">
+            <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
-                    <div class="small">
-                        <div class="text-muted">
-                            Dec 23, 2024
+                    <i class="bi bi-calendar3 text-muted me-2"></i>
+                    <small class="text-muted">Dec 23, 2024</small>
+                </div>
+                
+                <!-- Reading Time Estimate -->
+                
+                
+                
+                <small class="text-muted">
+                    <i class="bi bi-clock me-1"></i>1 min read
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+                
+            
+        </div>
+
+        <!-- Pagination -->
+        
+    </div>
+</section>
+
+<!-- Newsletter/CTA Section -->
+<section id="blog-cta" class="blog-cta section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+                <div class="bg-primary text-white rounded-4 p-5">
+                    <h3 class="mb-3">Stay Updated with Medical Insights</h3>
+                    <p class="mb-4">Join our community of medical students and professionals. Get the latest articles, study tips, and medical resources delivered to your inbox.</p>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your email address" aria-label="Email">
+                                <button class="btn btn-light text-primary fw-bold" type="button">Subscribe</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-            
-        </div>
-    
-        <nav  data-aos="fade-up" data-aos-delay="200">
-            
-        </nav>
-    </div>
 </section>
+
+<style>
+    /* Blog Page Styles */
+    .blog {
+        padding: 80px 0;
+    }
+    
+    .blog-hero {
+        margin-bottom: 60px;
+    }
+    
+    .blog-hero h1 {
+        margin-bottom: 30px;
+    }
+    
+    .blog-hero .lead {
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+    
+    .blog-pagination {
+        margin-top: 60px;
+    }
+    
+    .blog-pagination .page-link {
+        color: #4e73df;
+        border-color: #4e73df;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .blog-pagination .page-link:hover {
+        background-color: #4e73df;
+        border-color: #4e73df;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .blog-pagination .page-item.active .page-link {
+        background-color: #4e73df;
+        border-color: #4e73df;
+        color: white;
+    }
+    
+    .blog-cta {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    .blog-cta .bg-primary {
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%) !important;
+    }
+    
+    .blog-cta .form-control {
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px 0 0 25px;
+    }
+    
+    .blog-cta .btn {
+        border-radius: 0 25px 25px 0;
+        padding: 12px 25px;
+        border: none;
+    }
+    
+    .blog-cta .btn:hover {
+        background-color: #f8f9fa !important;
+        transform: translateY(-2px);
+    }
+    
+    /* Card hover effects */
+    .card {
+        transition: all 0.3s ease;
+        border: none;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img-top {
+        transition: all 0.3s ease;
+    }
+    
+    .card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .stretched-link {
+        color: #2c3e50;
+        text-decoration: none;
+    }
+    
+    .stretched-link:hover {
+        color: #4e73df;
+    }
+    
+    @media (max-width: 768px) {
+        .blog-hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .blog-hero .lead {
+            font-size: 1rem;
+        }
+        
+        .blog-pagination .page-link {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+    }
+</style>
     </main>
 
     <footer id="footer" class="footer">
@@ -255,7 +462,11 @@
   
     <!-- Main JS File -->
     <script src="/assets/js/main.js"></script>
-      <!-- for netlify identity widget -->
+    
+    <!-- Netlify Identity Widget for CMS Authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <!-- CMS Authentication Script -->
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {

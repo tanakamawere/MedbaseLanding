@@ -3,28 +3,61 @@ local_backend: true
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
+
 # This line should *not* be indented
-media_folder: "assets/img" # Folder where user uploaded files should go
-public_folder: "assets"
+media_folder: "images/uploads" # Folder where user uploaded files should go
+public_folder: "/images/uploads"
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
+    label: "Blog Posts" # Used in the UI
     folder: "_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string", hint: "The main title of your blog post" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss Z" }
+      - { label: "Description", name: "description", widget: "text", hint: "A brief summary of the post (used for SEO and previews)", required: false }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", hint: "Main image for the blog post", required: false }
+      - { label: "Categories", name: "categories", widget: "select", multiple: true, min: 1, max: 3, options: ["Medical Education", "Study Tips", "Healthcare", "Student Life", "Clinical Skills", "Anatomy", "Physiology", "Pharmacology", "Pathology", "Research", "Career Advice", "Technology", "News", "Events", "Resources"], hint: "Select up to 3 categories" }
+      - { label: "Tags", name: "tags", widget: "list", hint: "Add relevant tags (press Enter after each tag)", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "Medbase Team", hint: "Author name" }
+      - { label: "Reading Time (minutes)", name: "reading_time", widget: "number", min: 1, max: 60, required: false, hint: "Estimated reading time in minutes" }
+      - { label: "Featured Post", name: "featured", widget: "boolean", default: false, hint: "Mark as featured post" }
+      - { label: "Published", name: "published", widget: "boolean", default: true, hint: "Uncheck to save as draft" }
+      - { label: "SEO Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated keywords for SEO" }
+      - { label: "Body", name: "body", widget: "markdown", hint: "The main content of your blog post" }
+  
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Blog Page"
+        name: "blog"
+        file: "blog.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string" }
+          - { label: "Cover Image", name: "cover_image", widget: "string" }
+      
+      - label: "Home Page"
+        name: "home"
+        file: "index.md"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "home" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string" }
+          - { label: "Cover Image", name: "cover_image", widget: "string" }
+
   - name: "products" # Used in routes, e.g., /admin/collections/products
     label: "Products" # Used in the UI
     folder: "_products" # Folder where product files will be stored
     create: true # Allow users to create new products
-    slug: "{{year}}-{{name}}" # Filename template, e.g., product-name.md
+    slug: "{{slug}}" # Filename template, e.g., product-name.md
     fields: # Fields for each product
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["Books & Study Material", "Equipment", "Accessories", "Apparel", "First Aid & Medical Supplies"] }
@@ -38,3 +71,19 @@ collections:
           { label: "Image", name: "image", widget: "image" } # Each item in the list is an image
       - { label: "Stock Quantity", name: "stock", widget: "number", min: 0 }
       - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Available", name: "available", widget: "boolean", default: true }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Site Configuration"
+        name: "config"
+        file: "_config.yml"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Site Description", name: "description", widget: "text" }
+          - { label: "Site URL", name: "url", widget: "string" }
+          - { label: "Base URL", name: "baseurl", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Twitter Username", name: "twitter_username", widget: "string", required: false }
+          - { label: "GitHub Username", name: "github_username", widget: "string", required: false }

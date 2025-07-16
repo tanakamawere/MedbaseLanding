@@ -1,0 +1,90 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Blog index -->
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Store page -->
+  <url>
+    <loc>{{ site.url }}/store/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact page -->
+  <url>
+    <loc>{{ site.url }}/contact/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Privacy page -->
+  <url>
+    <loc>{{ site.url }}/privacy/</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Blog posts -->
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      {% if post.thumbnail %}
+      <image:image>
+        <image:loc>{{ site.url }}{{ post.thumbnail }}</image:loc>
+        <image:title>{{ post.title | xml_escape }}</image:title>
+        <image:caption>{{ post.description | xml_escape }}</image:caption>
+      </image:image>
+      {% endif %}
+    </url>
+  {% endfor %}
+  
+  <!-- Products -->
+  {% for product in site.products %}
+    <url>
+      <loc>{{ site.url }}{{ product.url }}</loc>
+      <lastmod>{{ product.date | default: site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.6</priority>
+      {% if product.cover_image %}
+      <image:image>
+        <image:loc>{{ site.url }}{{ product.cover_image }}</image:loc>
+        <image:title>{{ product.name | xml_escape }}</image:title>
+        <image:caption>{{ product.description | xml_escape }}</image:caption>
+      </image:image>
+      {% endif %}
+    </url>
+  {% endfor %}
+  
+  <!-- Blog pagination pages -->
+  {% assign total_pages = paginator.total_pages | default: 1 %}
+  {% for page_num in (2..total_pages) %}
+    <url>
+      <loc>{{ site.url }}/blog/page/{{ page_num }}/</loc>
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  {% endfor %}
+</urlset>

@@ -5,12 +5,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     
+    <title>Medbase Content Manager</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/img/favicon-16x16.png" sizes="16x16" />
+    
+    <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <title>Medbase Landing Manager</title>
+    
+    <!-- Custom CSS for the admin interface -->
+    <style>
+      /* Custom styling for Decap CMS */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      
+      /* Brand colors */
+      :root {
+        --primary-color: #4e73df;
+        --primary-hover: #3a5ecc;
+        --success-color: #1cc88a;
+        --danger-color: #e74a3b;
+        --warning-color: #f6c23e;
+        --info-color: #36b9cc;
+        --light-color: #f8f9fc;
+        --dark-color: #5a5c69;
+      }
+      
+      /* Custom loading screen */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+      
+      .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .loading-logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid white;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+    </style>
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-logo">Medbase</div>
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading Content Manager...</div>
+    </div>
+    
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <!-- Custom JavaScript for enhanced functionality -->
+    <script>
+      // Hide loading screen when CMS is ready
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          document.getElementById('loadingScreen').classList.add('hidden');
+        }, 1000);
+      });
+      
+      // Custom preview styles
+      CMS.registerPreviewStyle('/assets/css/styles.css');
+      
+      // Custom preview template for blog posts
+      CMS.registerPreviewTemplate('blog', function(props) {
+        const { entry, widgetFor, widgetsFor } = props;
+        const title = entry.getIn(['data', 'title']);
+        const description = entry.getIn(['data', 'description']);
+        const thumbnail = entry.getIn(['data', 'thumbnail']);
+        const categories = entry.getIn(['data', 'categories']);
+        const date = entry.getIn(['data', 'date']);
+        const body = widgetFor('body');
+        
+        return `
+          <div style="max-width: 800px; margin: 0 auto; padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+            <div style="text-align: center; margin-bottom: 40px;">
+              <div style="color: #666; margin-bottom: 10px; font-size: 14px;">
+                ${date ? new Date(date).toLocaleDateString() : ''}
+                ${categories ? categories.map(cat => `<span style="background: #4e73df; color: white; padding: 2px 8px; border-radius: 12px; margin: 0 2px; font-size: 12px;">${cat}</span>`).join('') : ''}
+              </div>
+              <h1 style="font-size: 2.5rem; font-weight: bold; color: #2c3e50; margin-bottom: 20px;">${title || 'Untitled Post'}</h1>
+              ${description ? `<p style="font-size: 1.1rem; color: #666; line-height: 1.6;">${description}</p>` : ''}
+            </div>
+            
+            ${thumbnail ? `<div style="margin-bottom: 40px; text-align: center;"><img src="${thumbnail}" alt="${title}" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" /></div>` : ''}
+            
+            <div style="font-size: 1.1rem; line-height: 1.8; color: #333;">
+              ${body || '<p>Start writing your blog post...</p>'}
+            </div>
+          </div>
+        `;
+      });
+      
+      // Custom editor components
+      CMS.registerEditorComponent({
+        id: 'callout',
+        label: 'Callout Box',
+        fields: [
+          { name: 'type', label: 'Type', widget: 'select', options: ['info', 'warning', 'success', 'danger'] },
+          { name: 'title', label: 'Title', widget: 'string' },
+          { name: 'content', label: 'Content', widget: 'markdown' }
+        ],
+        pattern: /^<div class="callout callout-(\w+)">\s*<h4>(.*?)<\/h4>\s*(.*?)\s*<\/div>$/ms,
+        fromBlock: function(match) {
+          return {
+            type: match[1],
+            title: match[2],
+            content: match[3]
+          };
+        },
+        toBlock: function(obj) {
+          return `<div class="callout callout-${obj.type}">
+  <h4>${obj.title}</h4>
+  ${obj.content}
+</div>`;
+        },
+        toPreview: function(obj) {
+          const colors = {
+            info: '#36b9cc',
+            warning: '#f6c23e',
+            success: '#1cc88a',
+            danger: '#e74a3b'
+          };
+          return `<div style="border-left: 4px solid ${colors[obj.type]}; padding: 15px; margin: 20px 0; background: #f8f9fa; border-radius: 5px;">
+            <h4 style="color: ${colors[obj.type]}; margin: 0 0 10px 0;">${obj.title}</h4>
+            ${obj.content}
+          </div>`;
+        }
+      });
+      
+      // Medical abbreviation component
+      CMS.registerEditorComponent({
+        id: 'medical-abbr',
+        label: 'Medical Abbreviation',
+        fields: [
+          { name: 'abbr', label: 'Abbreviation', widget: 'string' },
+          { name: 'definition', label: 'Definition', widget: 'string' }
+        ],
+        pattern: /^<abbr title="(.*?)">(.*?)<\/abbr>$/,
+        fromBlock: function(match) {
+          return {
+            definition: match[1],
+            abbr: match[2]
+          };
+        },
+        toBlock: function(obj) {
+          return `<abbr title="${obj.definition}">${obj.abbr}</abbr>`;
+        },
+        toPreview: function(obj) {
+          return `<abbr title="${obj.definition}" style="text-decoration: underline dotted; cursor: help; color: #4e73df;">${obj.abbr}</abbr>`;
+        }
+      });
+      
+      // Authentication handling
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function(user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function() {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

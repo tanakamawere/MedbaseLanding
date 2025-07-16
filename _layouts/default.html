@@ -24,7 +24,11 @@
   
     <!-- Main JS File -->
     <script src="/assets/js/main.js"></script>
-      <!-- for netlify identity widget -->
+    
+    <!-- Netlify Identity Widget for CMS Authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <!-- CMS Authentication Script -->
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {
